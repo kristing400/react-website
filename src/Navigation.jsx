@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import SocialNavBar from './components/SocialNavBar';
 
-function App() {
+export default function Navigation() {
   return (
     <div style={containerStyle}>
       <SocialNavBar />
@@ -10,8 +10,6 @@ function App() {
     </div>
   );
 }
-
-export default App;
 
 const containerStyle = {
   paddingRight: '144px',

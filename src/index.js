@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom"; import * as serviceWorker from './serviceWorker';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Navigation from './Navigation';
+import Gallery from './components/Gallery';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Navigation />
+    <Route exact path='/' component={Gallery}>
+    </Route>
+  </Router>,
   document.getElementById('root')
 );
 
