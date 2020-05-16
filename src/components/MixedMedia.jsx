@@ -92,7 +92,7 @@ export default function MixedMedia() {
 const subtitleStyle = {
   textAlign: "center",
   display: "flex",
-  color: "#5E6067",
+  color: "#6F727B",
   justifyContent: "center",
   paddingBottom: "32px",
 };
