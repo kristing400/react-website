@@ -89,20 +89,20 @@ function Header({ history, currentTab }) {
             code/art
           </NavItem>
           <NavItem
-            isFocused={shouldUnderline(MIXED_MEDIA)}
-            name={MIXED_MEDIA}
-            setFocusedButton={setFocusedButton}
-            onClick={() => history.push(MIXED_MEDIA_PATH)}
-          >
-            mixed media
-          </NavItem>
-          <NavItem
             isFocused={shouldUnderline(WATERCOLORS)}
             name={WATERCOLORS}
             setFocusedButton={setFocusedButton}
             onClick={() => history.push(WATERCOLORS_PATH)}
           >
             watercolors
+          </NavItem>
+          <NavItem
+            isFocused={shouldUnderline(MIXED_MEDIA)}
+            name={MIXED_MEDIA}
+            setFocusedButton={setFocusedButton}
+            onClick={() => history.push(MIXED_MEDIA_PATH)}
+          >
+            shanghai subway
           </NavItem>
         </div>
         <hr />
@@ -135,7 +135,7 @@ const navContainerStyle = {
 
 const containerStyle = {
   paddingTop: "56px",
-  paddingBottom: "56px",
+  paddingBottom: "32px",
 };
 
 const titleStyle = {
