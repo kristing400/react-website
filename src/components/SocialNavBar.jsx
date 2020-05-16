@@ -8,12 +8,12 @@ export default function SocialNavBar() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.instagram.com/_kristinyin_"
-          style={navItemStyle}
+          className="gray-link"
         >
           instagram
         </a>
         <a
-          style={navItemStyle}
+          className="gray-link"
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/kristin-yin-347b60110/"
@@ -21,7 +21,7 @@ export default function SocialNavBar() {
           linkedin
         </a>
         <a
-          style={navItemStyle}
+          className="gray-link"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/kristing400"
@@ -43,10 +43,4 @@ const containerStyle = {
   marginLeft: "40px",
   marginRight: "40px",
   fontSize: "18px",
-};
-
-const navItemStyle = {
-  paddingLeft: "32px",
-  paddingRight: "32px",
-  color: "#6F727B",
 };

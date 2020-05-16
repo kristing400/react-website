@@ -40,3 +40,9 @@ button:hover {
 button:focus {
   outline: 0;
 }
+
+.gray-link {
+  padding-left: 32px;
+  padding-right: 32px;
+  color: #6f727b;
+}
