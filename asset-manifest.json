@@ -1,28 +1,39 @@
 {
   "files": {
     "main.css": "/react-website/static/css/main.d5a48332.chunk.css",
-    "main.js": "/react-website/static/js/main.ed3591af.chunk.js",
-    "main.js.map": "/react-website/static/js/main.ed3591af.chunk.js.map",
+    "main.js": "/react-website/static/js/main.857d4170.chunk.js",
+    "main.js.map": "/react-website/static/js/main.857d4170.chunk.js.map",
     "runtime-main.js": "/react-website/static/js/runtime-main.8a31f507.js",
     "runtime-main.js.map": "/react-website/static/js/runtime-main.8a31f507.js.map",
-    "static/js/2.e24b862c.chunk.js": "/react-website/static/js/2.e24b862c.chunk.js",
-    "static/js/2.e24b862c.chunk.js.map": "/react-website/static/js/2.e24b862c.chunk.js.map",
+    "static/js/2.2938fcea.chunk.js": "/react-website/static/js/2.2938fcea.chunk.js",
+    "static/js/2.2938fcea.chunk.js.map": "/react-website/static/js/2.2938fcea.chunk.js.map",
     "index.html": "/react-website/index.html",
-    "precache-manifest.4490c542400f4064fc88fd850a990da4.js": "/react-website/precache-manifest.4490c542400f4064fc88fd850a990da4.js",
+    "precache-manifest.5503e0d69e57167f9a6f28cfe6867d58.js": "/react-website/precache-manifest.5503e0d69e57167f9a6f28cfe6867d58.js",
     "service-worker.js": "/react-website/service-worker.js",
     "static/css/main.d5a48332.chunk.css.map": "/react-website/static/css/main.d5a48332.chunk.css.map",
-    "static/js/2.e24b862c.chunk.js.LICENSE.txt": "/react-website/static/js/2.e24b862c.chunk.js.LICENSE.txt",
+    "static/js/2.2938fcea.chunk.js.LICENSE.txt": "/react-website/static/js/2.2938fcea.chunk.js.LICENSE.txt",
     "static/media/hiddenStairways.JPG": "/react-website/static/media/hiddenStairways.dc2d15a6.JPG",
     "static/media/palaceOfFineArts.JPG": "/react-website/static/media/palaceOfFineArts.13f7c58a.JPG",
     "static/media/resume.pdf": "/react-website/static/media/resume.b253da65.pdf",
     "static/media/riceball.JPG": "/react-website/static/media/riceball.b3c7e9ee.JPG",
     "static/media/sashimi.JPG": "/react-website/static/media/sashimi.c1710858.JPG",
-    "static/media/seoul.JPG": "/react-website/static/media/seoul.055b8d68.JPG"
+    "static/media/seoul.JPG": "/react-website/static/media/seoul.055b8d68.JPG",
+    "static/media/subway_1.jpg": "/react-website/static/media/subway_1.11079477.jpg",
+    "static/media/subway_10.jpg": "/react-website/static/media/subway_10.03edd7a8.jpg",
+    "static/media/subway_11.jpg": "/react-website/static/media/subway_11.990f11bb.jpg",
+    "static/media/subway_2.jpg": "/react-website/static/media/subway_2.bb20f864.jpg",
+    "static/media/subway_3.jpg": "/react-website/static/media/subway_3.34e52cc3.jpg",
+    "static/media/subway_4.jpg": "/react-website/static/media/subway_4.2497cab3.jpg",
+    "static/media/subway_5.jpg": "/react-website/static/media/subway_5.4b70e775.jpg",
+    "static/media/subway_6.jpg": "/react-website/static/media/subway_6.59b8b2c1.jpg",
+    "static/media/subway_7.jpg": "/react-website/static/media/subway_7.cc49bf34.jpg",
+    "static/media/subway_8.jpg": "/react-website/static/media/subway_8.677d35d4.jpg",
+    "static/media/subway_9.jpg": "/react-website/static/media/subway_9.4a916b8a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8a31f507.js",
-    "static/js/2.e24b862c.chunk.js",
+    "static/js/2.2938fcea.chunk.js",
     "static/css/main.d5a48332.chunk.css",
-    "static/js/main.ed3591af.chunk.js"
+    "static/js/main.857d4170.chunk.js"
   ]
 }
