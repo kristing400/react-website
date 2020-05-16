@@ -94,6 +94,5 @@ const subtitleStyle = {
   display: "flex",
   color: "#5E6067",
   justifyContent: "center",
-  paddingBottom: "18px",
-  lineHeight: "1.4",
+  paddingBottom: "32px",
 };

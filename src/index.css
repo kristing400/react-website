@@ -22,3 +22,21 @@ hr {
   border: 0;
   border-top: 1px solid #b4d2e7;
 }
+
+p {
+  line-height: 1.4;
+  margin: 0;
+}
+
+button {
+  background: 0;
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}

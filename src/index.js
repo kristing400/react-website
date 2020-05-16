@@ -7,6 +7,7 @@ import Watercolors from "./components/Watercolors";
 import Hackathon from "./components/Hackathon";
 import CodeArt from "./components/CodeArt";
 import MixedMedia from "./components/MixedMedia";
+import Home from "./components/Home";
 
 const contentStyle = {
   paddingLeft: "256px",
@@ -37,7 +38,7 @@ ReactDOM.render(
           <Watercolors />
         </Route>
         <Route exact path={HOME_PATH}>
-          <Watercolors />
+          <Home />
         </Route>
       </div>
     </HashRouter>

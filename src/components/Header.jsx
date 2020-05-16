@@ -6,6 +6,7 @@ import {
   CODE_ART_PATH,
   MIXED_MEDIA_PATH,
   WATERCOLORS_PATH,
+  HOME_PATH,
 } from "..";
 
 export const RESUME = "RESUME";
@@ -62,7 +63,12 @@ function Header({ history, currentTab }) {
   return (
     <>
       <header style={containerStyle}>
-        <h1 style={titleStyle}>Kristin Yin</h1>
+        <button
+          onClick={() => history.push(HOME_PATH)}
+          style={titleContainerStyle}
+        >
+          <h1 style={titleStyle}>Kristin Yin</h1>
+        </button>
         <div style={navContainerStyle}>
           <NavItem
             isFocused={shouldUnderline(RESUME)}
@@ -135,7 +141,7 @@ const navContainerStyle = {
 
 const containerStyle = {
   paddingTop: "56px",
-  paddingBottom: "32px",
+  paddingBottom: "48px",
 };
 
 const titleStyle = {
@@ -145,4 +151,10 @@ const titleStyle = {
   textAlign: "center",
   letterSpacing: "0.1em",
   color: "#000100",
+};
+
+const titleContainerStyle = {
+  textAlign: "center",
+  margin: "auto",
+  width: "100%",
 };
