@@ -1,20 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lato:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lato:wght@300&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000100;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 a:hover {
-  color: #94C5CC;
+  color: #94c5cc;
+  cursor: pointer;
 }
 
 a {
@@ -24,5 +20,5 @@ a {
 
 hr {
   border: 0;
-  border-top: 1px solid #B4D2E7;
+  border-top: 1px solid #b4d2e7;
 }
