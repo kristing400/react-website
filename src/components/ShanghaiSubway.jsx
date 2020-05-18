@@ -1,7 +1,7 @@
 import React from "react";
 import Gallery from "react-photo-gallery";
 import Navigation from "./Navigation";
-import { MIXED_MEDIA } from "./Header";
+import { SHANGHAI_SUBWAY } from "./Header";
 import subway1 from "../assets/mixedMedia/subway_1.jpg";
 import subway2 from "../assets/mixedMedia/subway_2.jpg";
 import subway3 from "../assets/mixedMedia/subway_3.jpg";
@@ -14,7 +14,7 @@ import subway9 from "../assets/mixedMedia/subway_9.jpg";
 import subway10 from "../assets/mixedMedia/subway_10.jpg";
 import subway11 from "../assets/mixedMedia/subway_11.jpg";
 
-export default function MixedMedia() {
+export default function ShanghaiSubway() {
   const photos = [
     {
       src: subway1,
@@ -74,7 +74,7 @@ export default function MixedMedia() {
   ];
   return (
     <>
-      <Navigation currentTab={MIXED_MEDIA} />
+      <Navigation currentTab={SHANGHAI_SUBWAY} />
       <div style={subtitleStyle}>
         <p style={{ width: "800px" }}>
           A concentration on the Shanghai Subway system. Nostalgic, complex,

@@ -48,10 +48,10 @@ const textContainerStyle = {
   width: "400px ",
   display: "flex",
   alignItems: "center",
-  padding: "24px",
+  padding: "32px",
 };
 
 const imgStyle = {
   borderRadius: "50%",
-  padding: "24px",
+  padding: "32px",
 };

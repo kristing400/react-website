@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import Watercolors from "./components/Watercolors";
-import Hackathon from "./components/Hackathon";
+import Hackathons from "./components/Hackathons";
 import CodeArt from "./components/CodeArt";
-import MixedMedia from "./components/MixedMedia";
+import ShanghaiSubway from "./components/ShanghaiSubway";
 import Home from "./components/Home";
 
 const contentStyle = {
@@ -17,7 +17,7 @@ const contentStyle = {
 
 export const HACKATHONS_PATH = "/hackathons";
 export const CODE_ART_PATH = "/code-art";
-export const MIXED_MEDIA_PATH = "/mixed-media";
+export const SHANGHAI_SUBWAY_PATH = "/shanghai-subway";
 export const WATERCOLORS_PATH = "/watercolors";
 export const HOME_PATH = "/";
 
@@ -26,13 +26,13 @@ ReactDOM.render(
     <HashRouter basename="/">
       <div style={contentStyle}>
         <Route exact path={HACKATHONS_PATH}>
-          <Hackathon />
+          <Hackathons />
         </Route>
         <Route exact path={CODE_ART_PATH}>
           <CodeArt />
         </Route>
-        <Route exact path={MIXED_MEDIA_PATH}>
-          <MixedMedia />
+        <Route exact path={SHANGHAI_SUBWAY_PATH}>
+          <ShanghaiSubway />
         </Route>
         <Route exact path={WATERCOLORS_PATH}>
           <Watercolors />

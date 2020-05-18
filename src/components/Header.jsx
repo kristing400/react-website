@@ -1,48 +1,28 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import Pdf from "../assets/resume.pdf";
 import { withRouter } from "react-router";
 import {
   HACKATHONS_PATH,
   CODE_ART_PATH,
-  MIXED_MEDIA_PATH,
   WATERCOLORS_PATH,
   HOME_PATH,
+  SHANGHAI_SUBWAY_PATH,
 } from "..";
 
 export const RESUME = "RESUME";
 export const HACKATHONS = "HACKATHONS";
 export const CODE_ART = "CODE_ART";
-export const MIXED_MEDIA = "MIXED_MEDIA";
+export const SHANGHAI_SUBWAY = "SHANGHAI_SUBWAY";
 export const WATERCOLORS = "WATERCOLORS";
 
-function NavItem({
-  name,
-  isFocused,
-  setFocusedButton,
-  children,
-  onClick,
-  href,
-}) {
-  const onMouseEnter = useCallback((e) => setFocusedButton(e.target.name), [
-    setFocusedButton,
-  ]);
-
-  const onMouseLeave = useCallback((e) => setFocusedButton(undefined), [
-    setFocusedButton,
-  ]);
-
+function NavItem({ name, isFocused, children, onClick, href }) {
+  let className = "header-link";
+  if (isFocused) className = className + " header-link-selected";
   return (
-    <div
-      name={name}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      style={navItemStyle}
-    >
+    <div name={name} style={navItemStyle}>
       <a
+        className={className}
         name={name}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        style={isFocused ? selectedNavStyle : undefined}
         href={href}
         rel="noopener noreferrer"
         target="_blank"
@@ -55,10 +35,7 @@ function NavItem({
 }
 
 function Header({ history, currentTab }) {
-  const [focusedButton, setFocusedButton] = useState(currentTab);
-
-  const shouldUnderline = (name) =>
-    name === focusedButton || name === currentTab;
+  const shouldUnderline = (name) => name === currentTab;
 
   return (
     <>
@@ -70,18 +47,12 @@ function Header({ history, currentTab }) {
           <h1 style={titleStyle}>Kristin Yin</h1>
         </button>
         <div style={navContainerStyle}>
-          <NavItem
-            isFocused={shouldUnderline(RESUME)}
-            name={RESUME}
-            setFocusedButton={setFocusedButton}
-            href={Pdf}
-          >
+          <NavItem isFocused={shouldUnderline(RESUME)} name={RESUME} href={Pdf}>
             resume
           </NavItem>
           <NavItem
             isFocused={shouldUnderline(HACKATHONS)}
             name={HACKATHONS}
-            setFocusedButton={setFocusedButton}
             onClick={() => history.push(HACKATHONS_PATH)}
           >
             hackathons
@@ -89,7 +60,6 @@ function Header({ history, currentTab }) {
           <NavItem
             isFocused={shouldUnderline(CODE_ART)}
             name={CODE_ART}
-            setFocusedButton={setFocusedButton}
             onClick={() => history.push(CODE_ART_PATH)}
           >
             code/art
@@ -97,16 +67,14 @@ function Header({ history, currentTab }) {
           <NavItem
             isFocused={shouldUnderline(WATERCOLORS)}
             name={WATERCOLORS}
-            setFocusedButton={setFocusedButton}
             onClick={() => history.push(WATERCOLORS_PATH)}
           >
             watercolors
           </NavItem>
           <NavItem
-            isFocused={shouldUnderline(MIXED_MEDIA)}
-            name={MIXED_MEDIA}
-            setFocusedButton={setFocusedButton}
-            onClick={() => history.push(MIXED_MEDIA_PATH)}
+            isFocused={shouldUnderline(SHANGHAI_SUBWAY)}
+            name={SHANGHAI_SUBWAY}
+            onClick={() => history.push(SHANGHAI_SUBWAY_PATH)}
           >
             shanghai subway
           </NavItem>
@@ -118,13 +86,6 @@ function Header({ history, currentTab }) {
 }
 
 export default withRouter(Header);
-
-const selectedNavStyle = {
-  paddingBottom: "8px",
-  borderBottomColor: "#94C5CC",
-  borderBottomWidth: "2px",
-  borderBottomStyle: "solid",
-};
 
 const navItemStyle = {
   paddingLeft: "32px",
