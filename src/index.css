@@ -41,6 +41,12 @@ button:focus {
   outline: 0;
 }
 
+button:hover path {
+  fill: #94c5cc;
+}
+
+path:hoveer {
+}
 .gray-link {
   padding-left: 32px;
   padding-right: 32px;

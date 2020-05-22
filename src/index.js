@@ -8,6 +8,7 @@ import Hackathons from "./components/Hackathons";
 import CodeArt from "./components/CodeArt";
 import ShanghaiSubway from "./components/ShanghaiSubway";
 import Home from "./components/Home";
+import Net from "./components/Net";
 
 const contentStyle = {
   paddingLeft: "256px",
@@ -19,7 +20,12 @@ export const HACKATHONS_PATH = "/hackathons";
 export const CODE_ART_PATH = "/code-art";
 export const SHANGHAI_SUBWAY_PATH = "/shanghai-subway";
 export const WATERCOLORS_PATH = "/watercolors";
+export const EQUERRY_PATH = "/hackathons/equerry";
+export const NET_PATH = "/hackathons/net";
+export const TAILORD_PATH = "/hackathons/tailord";
 export const HOME_PATH = "/";
+
+export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
 
 ReactDOM.render(
   <Router>
@@ -36,6 +42,9 @@ ReactDOM.render(
         </Route>
         <Route exact path={WATERCOLORS_PATH}>
           <Watercolors />
+        </Route>
+        <Route exact path={NET_PATH}>
+          <Net />
         </Route>
         <Route exact path={HOME_PATH}>
           <Home />

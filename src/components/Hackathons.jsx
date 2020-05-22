@@ -7,6 +7,7 @@ import equerry from "../assets/hackathons/equerry/equerry.png";
 import tailord from "../assets/hackathons/tailord/tailord.jpg";
 import { withRouter } from "react-router";
 import LinkImg from "./LinkImg";
+import { NET_PATH, TAILORD_PATH, EQUERRY_PATH } from "..";
 
 function Hackathons({ history }) {
   const photos = [
@@ -16,7 +17,7 @@ function Hackathons({ history }) {
       height: 5,
       alt: "net",
       title: "Facebook Global Hackathon Finals 2018",
-      description: "Top 6 hack",
+      description: "Top 6 Finalist",
     },
 
     {
@@ -41,11 +42,11 @@ function Hackathons({ history }) {
     (e) => {
       const name = e.target.alt;
       if (name === "net") {
-        history.push("./hackathons/net");
+        history.push(NET_PATH);
       } else if (name === "tailor'd") {
-        history.push("./hackathons/tailord");
+        history.push(TAILORD_PATH);
       } else if (name === "equerry") {
-        history.push("./hackathons/equerry");
+        history.push(EQUERRY_PATH);
       }
     },
     [history]
