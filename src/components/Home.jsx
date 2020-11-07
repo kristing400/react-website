@@ -1,22 +1,37 @@
 import React from "react";
 import Navigation from "./Navigation";
 import profile from "../assets/me.jpg";
+import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function Home() {
+  const classes = useStyles();
+
   return (
     <>
       <Navigation />
-      <div style={containerStyle}>
-        <img
-          src={profile}
-          alt="profile_img"
-          style={imgStyle}
-          width={400}
-          height={400}
-        />
-        <div style={textContainerStyle}>
-          <div>
-            <h3 style={subtitleStyle}>Software Engineer @ Airbnb</h3>
+      <Grid
+        direction="row"
+        container
+        justify="center"
+        alignItems="center"
+        spacing={4}
+      >
+        <Grid item>
+          <div className={classes.imgContainerStyle}>
+            <img
+              src={profile}
+              alt="profile_img"
+              width="100%"
+              className={classes.imgStyle}
+            />
+          </div>
+        </Grid>
+        <Grid item>
+          <div className={classes.textContainerStyle}>
+            <h3 className={classes.subtitleStyle}>
+              Software Engineer @ Airbnb
+            </h3>
             <br />
             <p>Carngie Mellon University 2018</p>
             <p>Bachelors of Computer Science and Arts</p>
@@ -27,31 +42,42 @@ export default function Home() {
               badminton, interactive art, generative art, video games, piano
             </p>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </>
   );
 }
 
-const subtitleStyle = {
-  fontFamily: "Julius Sans One",
-  fontSize: "18px",
-  fontWeight: "normal",
-};
+const useStyles = makeStyles((theme) => ({
+  container: {
+    maxWidth: "1000px",
+  },
 
-const containerStyle = {
-  display: "flex",
-  justifyContent: "center",
-};
+  imgContainerStyle: {
+    maxWidth: "400px",
+    padding: "32px",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "300px",
+      padding: "8px",
+    },
+  },
 
-const textContainerStyle = {
-  width: "400px ",
-  display: "flex",
-  alignItems: "center",
-  padding: "32px",
-};
+  subtitleStyle: {
+    fontFamily: "Julius Sans One",
+    fontSize: "18px",
+    fontWeight: "normal",
+  },
 
-const imgStyle = {
-  borderRadius: "50%",
-  padding: "32px",
-};
+  textContainerStyle: {
+    maxWidth: "400px ",
+    margin: "32px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "16px",
+      textAlign: "center",
+    },
+  },
+
+  imgStyle: {
+    borderRadius: "50%",
+  },
+}));

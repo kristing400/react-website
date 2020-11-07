@@ -102,7 +102,7 @@ const navContainerStyle = {
 
 const containerStyle = {
   paddingTop: "56px",
-  paddingBottom: "48px",
+  paddingBottom: "40px",
 };
 
 const titleStyle = {

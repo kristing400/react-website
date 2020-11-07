@@ -15,7 +15,7 @@ function Navigation({ currentTab, history, showBackArrow }) {
             width: "256px",
             position: "absolute",
             left: 0,
-            top: "280px",
+            top: "304",
           }}
         >
           <button
