@@ -1,5 +1,6 @@
 import React from "react";
 import Gallery from "react-photo-gallery";
+import { makeStyles } from "@material-ui/core/styles";
 import Navigation from "./Navigation";
 import { SHANGHAI_SUBWAY } from "./Header";
 import subway1 from "../assets/mixedMedia/subway_1.jpg";
@@ -15,16 +16,18 @@ import subway10 from "../assets/mixedMedia/subway_10.jpg";
 import subway11 from "../assets/mixedMedia/subway_11.jpg";
 
 export default function ShanghaiSubway() {
+  const classes = useStyles();
   const photos = [
     {
       src: subway1,
       width: 11,
       height: 16,
     },
+
     {
-      src: subway2,
-      width: 5,
-      height: 16,
+      src: subway8,
+      width: 16,
+      height: 11,
     },
     {
       src: subway3,
@@ -46,15 +49,11 @@ export default function ShanghaiSubway() {
       width: 16,
       height: 11,
     },
+
     {
-      src: subway11,
-      width: 16,
-      height: 11,
-    },
-    {
-      src: subway8,
-      width: 16,
-      height: 11,
+      src: subway2,
+      width: 5,
+      height: 16,
     },
     {
       src: subway9,
@@ -62,10 +61,17 @@ export default function ShanghaiSubway() {
       height: 6,
     },
     {
+      src: subway11,
+      width: 16,
+      height: 11,
+    },
+
+    {
       src: subway7,
       width: 8,
       height: 3,
     },
+
     {
       src: subway10,
       width: 16,
@@ -75,24 +81,43 @@ export default function ShanghaiSubway() {
   return (
     <>
       <Navigation currentTab={SHANGHAI_SUBWAY} />
-      <div style={subtitleStyle}>
-        <p style={{ width: "800px" }}>
-          A concentration on the Shanghai Subway system. Nostalgic, complex,
-          convenient, yet dreadful, these are the words that come to mine when I
-          think of the Shanghai subway system. I completed this series back in
-          2014, junior year of highschool, for my AP Art Studio portfolio. It's
-          been over six years, and some of my favorite pieces still remain here.
-        </p>
+      <div className={classes.container}>
+        <div className={classes.subtitleStyle}>
+          <p style={{ width: "800px" }}>
+            A concentration on the Shanghai Subway system. Nostalgic, complex,
+            convenient, yet dreadful, these are the words that come to mine when
+            I think of the Shanghai subway system. I completed this series back
+            in 2014, junior year of highschool, for my AP Art Studio portfolio.
+            It's been over six years, and some of my favorite pieces still
+            remain here.
+          </p>
+        </div>
+        <Gallery margin={8} direction="row" photos={photos} />
       </div>
-      <Gallery margin={16} direction="row" photos={photos} />
     </>
   );
 }
 
-const subtitleStyle = {
-  textAlign: "center",
-  display: "flex",
-  color: "#6F727B",
-  justifyContent: "center",
-  paddingBottom: "32px",
-};
+const useStyles = makeStyles((theme) => ({
+  container: {
+    paddingBottom: "32px",
+
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "32px",
+      paddingBottom: "32px",
+    },
+  },
+  subtitleStyle: {
+    textAlign: "center",
+    display: "flex",
+    color: "#6F727B",
+    justifyContent: "center",
+    paddingBottom: "32px",
+
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "left",
+      paddingLeft: "8px",
+      paddingRight: "8px",
+    },
+  },
+}));

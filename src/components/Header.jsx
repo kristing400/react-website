@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import { Icon, InlineIcon } from "@iconify/react";
+import menuLine from "@iconify/icons-clarity/menu-line";
+import ListItem from "@material-ui/core/ListItem";
+import List from "@material-ui/core/List";
 import Pdf from "../assets/resume.pdf";
 import { withRouter } from "react-router";
 import {
@@ -8,6 +13,7 @@ import {
   HOME_PATH,
   SHANGHAI_SUBWAY_PATH,
 } from "..";
+import { makeStyles } from "@material-ui/core/styles";
 
 export const RESUME = "RESUME";
 export const HACKATHONS = "HACKATHONS";
@@ -16,10 +22,12 @@ export const SHANGHAI_SUBWAY = "SHANGHAI_SUBWAY";
 export const WATERCOLORS = "WATERCOLORS";
 
 function NavItem({ name, isFocused, children, onClick, href }) {
+  const classes = useStyles();
+
   let className = "header-link";
   if (isFocused) className = className + " header-link-selected";
   return (
-    <div name={name} style={navItemStyle}>
+    <div name={name} className={classes.navItemStyle}>
       <a
         className={className}
         name={name}
@@ -35,87 +43,242 @@ function NavItem({ name, isFocused, children, onClick, href }) {
 }
 
 function Header({ history, currentTab }) {
+  const [open, setOpen] = useState(false);
   const shouldUnderline = (name) => name === currentTab;
-
+  const classes = useStyles();
   return (
     <>
-      <header style={containerStyle}>
-        <button
-          onClick={() => history.push(HOME_PATH)}
-          style={titleContainerStyle}
-        >
-          <h1 style={titleStyle}>Kristin Yin</h1>
-        </button>
-        <div style={navContainerStyle}>
-          <NavItem isFocused={shouldUnderline(RESUME)} name={RESUME} href={Pdf}>
-            resume
-          </NavItem>
-          <NavItem
-            isFocused={shouldUnderline(HACKATHONS)}
-            name={HACKATHONS}
-            onClick={() => history.push(HACKATHONS_PATH)}
+      <div className={classes.moweb}>
+        <header className={classes.containerStyle}>
+          <SwipeableDrawer open={open} onClose={() => setOpen(false)}>
+            <List>
+              <div className={classes.drawerStyle}>
+                <ListItem
+                  button
+                  key="resume"
+                  selected={shouldUnderline(RESUME)}
+                  onClick={() => window.open(Pdf, "_blank")}
+                >
+                  <div className={classes.drawerItemStyle}>resume</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="hackathons"
+                  selected={shouldUnderline(HACKATHONS)}
+                  onClick={() => history.push(HACKATHONS_PATH)}
+                >
+                  <div className={classes.drawerItemStyle}>hackathons</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="code_art"
+                  selected={shouldUnderline(CODE_ART)}
+                  onClick={() => history.push(CODE_ART_PATH)}
+                >
+                  <div className={classes.drawerItemStyle}>code/art</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="watercolors"
+                  selected={shouldUnderline(WATERCOLORS)}
+                  onClick={() => history.push(WATERCOLORS_PATH)}
+                >
+                  <div className={classes.drawerItemStyle}>watercolors</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="shanghai_subway"
+                  selected={shouldUnderline(SHANGHAI_SUBWAY)}
+                  onClick={() => history.push(SHANGHAI_SUBWAY_PATH)}
+                >
+                  <div className={classes.drawerItemStyle}>shanghai subway</div>
+                </ListItem>
+                <hr className={classes.navDividerStyle} />
+                <ListItem
+                  button
+                  key="github"
+                  onClick={() =>
+                    window.open("https://github.com/kristing400", "_blank")
+                  }
+                >
+                  <div className={classes.drawerItemStyle}>github</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="linkedin"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/kristin-yin-347b60110/",
+                      "_blank"
+                    )
+                  }
+                >
+                  <div className={classes.drawerItemStyle}>linkedin</div>
+                </ListItem>
+
+                <ListItem
+                  button
+                  key="instagram"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/_kristinyin_",
+                      "_blank"
+                    )
+                  }
+                >
+                  <div className={classes.drawerItemStyle}>instagram</div>
+                </ListItem>
+              </div>
+            </List>
+          </SwipeableDrawer>
+          <button className={classes.iconStyle} onClick={() => setOpen(true)}>
+            <Icon icon={menuLine} style={{ fontSize: "26px" }} />
+          </button>
+          <button
+            onClick={() => history.push(HOME_PATH)}
+            className={classes.titleStyle}
           >
-            hackathons
-          </NavItem>
-          <NavItem
-            isFocused={shouldUnderline(CODE_ART)}
-            name={CODE_ART}
-            onClick={() => history.push(CODE_ART_PATH)}
-          >
-            code/art
-          </NavItem>
-          <NavItem
-            isFocused={shouldUnderline(WATERCOLORS)}
-            name={WATERCOLORS}
-            onClick={() => history.push(WATERCOLORS_PATH)}
-          >
-            watercolors
-          </NavItem>
-          <NavItem
-            isFocused={shouldUnderline(SHANGHAI_SUBWAY)}
-            name={SHANGHAI_SUBWAY}
-            onClick={() => history.push(SHANGHAI_SUBWAY_PATH)}
-          >
-            shanghai subway
-          </NavItem>
-        </div>
+            KRISTIN YIN
+          </button>
+        </header>
         <hr />
-      </header>
+      </div>
+      <div className={classes.desktop}>
+        <header className={classes.containerStyle}>
+          <button
+            onClick={() => history.push(HOME_PATH)}
+            className={classes.titleContainerStyle}
+          >
+            <h1 className={classes.titleStyle}>Kristin Yin</h1>
+          </button>
+          <div className={classes.navContainerStyle}>
+            <NavItem
+              isFocused={shouldUnderline(RESUME)}
+              name={RESUME}
+              href={Pdf}
+            >
+              resume
+            </NavItem>
+            <NavItem
+              isFocused={shouldUnderline(HACKATHONS)}
+              name={HACKATHONS}
+              onClick={() => history.push(HACKATHONS_PATH)}
+            >
+              hackathons
+            </NavItem>
+            <NavItem
+              isFocused={shouldUnderline(CODE_ART)}
+              name={CODE_ART}
+              onClick={() => history.push(CODE_ART_PATH)}
+            >
+              code/art
+            </NavItem>
+            <NavItem
+              isFocused={shouldUnderline(WATERCOLORS)}
+              name={WATERCOLORS}
+              onClick={() => history.push(WATERCOLORS_PATH)}
+            >
+              watercolors
+            </NavItem>
+            <NavItem
+              isFocused={shouldUnderline(SHANGHAI_SUBWAY)}
+              name={SHANGHAI_SUBWAY}
+              onClick={() => history.push(SHANGHAI_SUBWAY_PATH)}
+            >
+              shanghai subway
+            </NavItem>
+          </div>
+          <hr />
+        </header>
+      </div>
     </>
   );
 }
 
 export default withRouter(Header);
 
-const navItemStyle = {
-  paddingLeft: "32px",
-  paddingRight: "32px",
-};
+const useStyles = makeStyles((theme) => ({
+  moweb: {
+    visibility: "hidden",
+    height: 0,
 
-const navContainerStyle = {
-  paddingTop: "24px",
-  paddingBottom: "56px",
-  fontSize: "18px",
-  display: "flex",
-  justifyContent: "center",
-};
+    [theme.breakpoints.down("sm")]: {
+      visibility: "visible",
+      height: "100%",
+    },
+  },
 
-const containerStyle = {
-  paddingTop: "56px",
-  paddingBottom: "40px",
-};
+  desktop: {
+    [theme.breakpoints.down("sm")]: {
+      visibility: "hidden",
+      height: 0,
+    },
+  },
 
-const titleStyle = {
-  fontFamily: "Julius Sans One",
-  fontSize: "36px",
-  fontWeight: "normal",
-  textAlign: "center",
-  letterSpacing: "0.1em",
-  color: "#000100",
-};
+  navItemStyle: {
+    paddingLeft: "32px",
+    paddingRight: "32px",
+  },
 
-const titleContainerStyle = {
-  textAlign: "center",
-  margin: "auto",
-  width: "100%",
-};
+  navDividerStyle: {
+    paddingLeft: "8px",
+    paddingRight: "8px",
+  },
+
+  navContainerStyle: {
+    paddingTop: "24px",
+    paddingBottom: "56px",
+    fontSize: "18px",
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  drawerStyle: {
+    fontSize: "18px",
+  },
+
+  drawerItemStyle: {
+    paddingTop: "8px",
+    paddingBottom: "8px",
+    paddingLeft: "8px",
+    paddingRight: "8px",
+  },
+
+  containerStyle: {
+    paddingTop: "56px",
+    paddingBottom: "40px",
+
+    [theme.breakpoints.down("sm")]: {
+      paddingRight: "8px",
+      paddingLeft: "8px",
+      paddingTop: "24px",
+      paddingBottom: "24px",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+
+  titleStyle: {
+    fontFamily: "Julius Sans One",
+    fontSize: "36px",
+    fontWeight: "normal",
+    textAlign: "center",
+    letterSpacing: "0.1em",
+    color: "#000100",
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "24px",
+    },
+  },
+
+  titleContainerStyle: {
+    textAlign: "center",
+    margin: "auto",
+    width: "100%",
+  },
+}));

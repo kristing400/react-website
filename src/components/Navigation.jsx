@@ -3,11 +3,16 @@ import SocialNavBar from "./SocialNavBar";
 import Header from "./Header";
 import { ReactComponent as Arrow } from "../assets/icons/arrow_back.svg";
 import { withRouter } from "react-router";
+import { makeStyles } from "@material-ui/core/styles";
 
 function Navigation({ currentTab, history, showBackArrow }) {
+  const classes = useStyles();
+
   return (
     <div>
-      <SocialNavBar />
+      <div className={classes.desktop}>
+        <SocialNavBar />
+      </div>
       <Header currentTab={currentTab} />
       {showBackArrow && (
         <div
@@ -31,3 +36,12 @@ function Navigation({ currentTab, history, showBackArrow }) {
 }
 
 export default withRouter(Navigation);
+
+const useStyles = makeStyles((theme) => ({
+  desktop: {
+    [theme.breakpoints.down("sm")]: {
+      visibility: "hidden",
+      height: 0,
+    },
+  },
+}));

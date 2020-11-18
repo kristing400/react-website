@@ -10,47 +10,52 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <Grid
-        direction="row"
-        container
-        justify="center"
-        alignItems="center"
-        spacing={4}
-      >
-        <Grid item>
-          <div className={classes.imgContainerStyle}>
-            <img
-              src={profile}
-              alt="profile_img"
-              width="100%"
-              className={classes.imgStyle}
-            />
-          </div>
+      <div className={classes.container}>
+        <Grid
+          direction="row"
+          container
+          justify="center"
+          alignItems="center"
+          spacing={4}
+        >
+          <Grid item>
+            <div className={classes.imgContainerStyle}>
+              <img
+                src={profile}
+                alt="profile_img"
+                width="100%"
+                className={classes.imgStyle}
+              />
+            </div>
+          </Grid>
+          <Grid item>
+            <div className={classes.textContainerStyle}>
+              <h3 className={classes.subtitleStyle}>
+                Software Engineer @ Airbnb
+              </h3>
+              <br />
+              <p>Carngie Mellon University 2018</p>
+              <p>Bachelors of Computer Science and Arts</p>
+              <br />
+              <p>
+                Ask me about: Airbnb, anime, watercolors, drawing, CMU, BCSA,
+                League of Legends, traveling, Shanghai, working in tech,
+                badminton, interactive art, generative art, video games, piano
+              </p>
+            </div>
+          </Grid>
         </Grid>
-        <Grid item>
-          <div className={classes.textContainerStyle}>
-            <h3 className={classes.subtitleStyle}>
-              Software Engineer @ Airbnb
-            </h3>
-            <br />
-            <p>Carngie Mellon University 2018</p>
-            <p>Bachelors of Computer Science and Arts</p>
-            <br />
-            <p>
-              Ask me about: Airbnb, anime, watercolors, drawing, CMU, BCSA,
-              League of Legends, traveling, Shanghai, working in tech,
-              badminton, interactive art, generative art, video games, piano
-            </p>
-          </div>
-        </Grid>
-      </Grid>
+      </div>
     </>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    maxWidth: "1000px",
+    overflowY: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "32px",
+    },
   },
 
   imgContainerStyle: {
