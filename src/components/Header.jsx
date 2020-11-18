@@ -226,8 +226,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   navDividerStyle: {
-    paddingLeft: "8px",
-    paddingRight: "8px",
+    marginLeft: "8px",
+    marginRight: "8px",
   },
 
   navContainerStyle: {
