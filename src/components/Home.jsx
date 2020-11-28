@@ -53,6 +53,7 @@ export default function Home() {
 const useStyles = makeStyles((theme) => ({
   container: {
     overflowY: "hidden",
+    overflowX: 'hidden',
     [theme.breakpoints.down("sm")]: {
       paddingTop: "32px",
     },

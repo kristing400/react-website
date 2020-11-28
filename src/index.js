@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import Watercolors from "./components/Watercolors";
-import Hackathons from "./components/Hackathons";
+import Programming from "./components/Programming";
 import CodeArt from "./components/CodeArt";
 import ShanghaiSubway from "./components/ShanghaiSubway";
 import Home from "./components/Home";
@@ -17,13 +17,13 @@ const contentStyle = {
   paddingBottom: "56px",
 };
 
-export const HACKATHONS_PATH = "/hackathons";
+export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
 export const SHANGHAI_SUBWAY_PATH = "/shanghai-subway";
 export const WATERCOLORS_PATH = "/watercolors";
-export const EQUERRY_PATH = "/hackathons/equerry";
-export const NET_PATH = "/hackathons/net";
-export const TAILORD_PATH = "/hackathons/tailord";
+export const EQUERRY_PATH = "/programmming/equerry";
+export const NET_PATH = "/programmming/net";
+export const TAILORD_PATH = "/programmming/tailord";
 export const HOME_PATH = "/";
 
 export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
@@ -33,8 +33,8 @@ ReactDOM.render(
     <HashRouter basename="/">
       <div style={{ overflowX: "hidden" }}>
         <Container maxWidth="lg">
-          <Route exact path={HACKATHONS_PATH}>
-            <Hackathons />
+          <Route exact path={PROGRAMMING_PATH}>
+            <Programming />
           </Route>
           <Route exact path={CODE_ART_PATH}>
             <CodeArt />

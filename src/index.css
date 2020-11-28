@@ -91,28 +91,3 @@ path:hoveer {
 .overlay:hover img {
   opacity: 0.03;
 }
-
-.overlay .overlay-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  opacity: 0;
-  z-index: 2;
-  color: #000100;
-  font-size: 16px;
-  font-weight: 800;
-  height: 100%;
-  padding-left: 48px;
-  padding-right: 48px;
-}
-
-.overlay:hover .overlay-text {
-  opacity: 1;
-}
-
-.gradient-background {
-  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%),
-    #94c5cc;
-}

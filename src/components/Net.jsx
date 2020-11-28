@@ -1,12 +1,12 @@
 import React from "react";
 import Navigation from "./Navigation";
-import { HACKATHONS } from "./Header";
+import { PROGRAMMING } from "./Header";
 import ProjectTitle from "./ProjectTitle";
 
 export default function Net() {
   return (
     <>
-      <Navigation currentTab={HACKATHONS} showBackArrow />
+      <Navigation currentTab={PROGRAMMING} showBackArrow />
       <ProjectTitle
         title="NET"
         subtitle="Facebook Global Hackathon Finals 2018 - Top 6 finalists"

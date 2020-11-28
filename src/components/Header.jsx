@@ -7,7 +7,7 @@ import List from "@material-ui/core/List";
 import Pdf from "../assets/resume.pdf";
 import { withRouter } from "react-router";
 import {
-  HACKATHONS_PATH,
+  PROGRAMMING_PATH,
   CODE_ART_PATH,
   WATERCOLORS_PATH,
   HOME_PATH,
@@ -16,7 +16,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 export const RESUME = "RESUME";
-export const HACKATHONS = "HACKATHONS";
+export const PROGRAMMING = "PROGRAMMING";
 export const CODE_ART = "CODE_ART";
 export const SHANGHAI_SUBWAY = "SHANGHAI_SUBWAY";
 export const WATERCOLORS = "WATERCOLORS";
@@ -64,11 +64,11 @@ function Header({ history, currentTab }) {
 
                 <ListItem
                   button
-                  key="hackathons"
-                  selected={shouldUnderline(HACKATHONS)}
-                  onClick={() => history.push(HACKATHONS_PATH)}
+                  key="programming"
+                  selected={shouldUnderline(PROGRAMMING)}
+                  onClick={() => history.push(PROGRAMMING)}
                 >
-                  <div className={classes.drawerItemStyle}>hackathons</div>
+                  <div className={classes.drawerItemStyle}>programming</div>
                 </ListItem>
 
                 <ListItem
@@ -165,11 +165,11 @@ function Header({ history, currentTab }) {
               resume
             </NavItem>
             <NavItem
-              isFocused={shouldUnderline(HACKATHONS)}
-              name={HACKATHONS}
-              onClick={() => history.push(HACKATHONS_PATH)}
+              isFocused={shouldUnderline(PROGRAMMING)}
+              name={PROGRAMMING}
+              onClick={() => history.push(PROGRAMMING_PATH)}
             >
-              hackathons
+              programming
             </NavItem>
             <NavItem
               isFocused={shouldUnderline(CODE_ART)}

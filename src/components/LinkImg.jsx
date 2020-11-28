@@ -1,4 +1,5 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function LinkImg({
   photo,
@@ -9,11 +10,11 @@ export default function LinkImg({
   top,
   title,
   description,
+  subtitle,
 }) {
+  const classes = useStyles();
+
   let cont = {
-    // background:
-    //   "#linear-gradient(180deg, #B4D2E7 0%, rgba(255, 255, 255, 0) 100%), #94C5CC;",
-    // backgroundColor: "#94C5CC",
     cursor: "pointer",
     overflow: "hidden",
     position: "relative",
@@ -27,13 +28,14 @@ export default function LinkImg({
 
   return (
     <div
-      className="gradient-background"
+      className={classes.container}
       style={{ margin, height: photo.height, width: photo.width, ...cont }}
     >
       <div className="overlay">
-        <div className="overlay-text">
-          <h4 style={titleStyle}>{title}</h4>
-          <p style={descriptionStyle}>{description}</p>
+        <div className={classes.overlayText}>
+          <h4 className={classes.titleStyle}>{title}</h4>
+          <h5 className={classes.subtitle}>{subtitle}</h5>
+          <p className={classes.descriptionStyle}>{description}</p>
         </div>
         <img {...photo} alt={photo.alt} onClick={onClick} />
       </div>
@@ -41,16 +43,39 @@ export default function LinkImg({
   );
 }
 
-const titleStyle = {
+const useStyles = makeStyles(() => ({
+  container: {
+    background: "linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%), #94c5cc;"
+  },
+  titleStyle: {
   fontFamily: "Julius Sans One",
-  fontSize: "18px",
+  fontSize: "20px",
   margin: 0,
-  marginBottom: "16px",
-  fontWeight: "normal",
+  fontWeight: 600,
   lineHeight: 1.4,
-};
-
-const descriptionStyle = {
-  fontSize: "16px",
+  paddingLeft: '16px',
+  paddingRight: "16px",
+},
+descriptionStyle:{
+  fontSize: "18px",
   fontWeight: 400,
-};
+},
+subtitle: {
+  fontSize: "18px",
+  fontWeight: 400,
+  marginBottom: "4px",
+},
+overlayText: {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  textAlign: "center",
+  visibility: "visible",
+  zIndex: 100,
+  color: "#000100",
+  fontSize: "16px",
+  fontWeight: 800,
+  height: "100%",
+}
+}));
