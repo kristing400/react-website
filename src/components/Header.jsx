@@ -6,6 +6,9 @@ import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import Pdf from "../assets/resume.pdf";
 import { withRouter } from "react-router";
+import { useTheme } from "@material-ui/core/styles";
+import roundArrowBackIos from "@iconify/icons-ic/round-arrow-back-ios";
+
 import {
   PROGRAMMING_PATH,
   CODE_ART_PATH,
@@ -14,6 +17,7 @@ import {
   SHANGHAI_SUBWAY_PATH,
 } from "..";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export const RESUME = "RESUME";
 export const PROGRAMMING = "PROGRAMMING";
@@ -42,10 +46,20 @@ function NavItem({ name, isFocused, children, onClick, href }) {
   );
 }
 
-function Header({ history, currentTab }) {
+function Header({ history, currentTab, showBackArrow }) {
   const [open, setOpen] = useState(false);
   const shouldUnderline = (name) => name === currentTab;
   const classes = useStyles();
+  const theme = useTheme();
+  const smallBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const handleOnclick = () => {
+    if (showBackArrow && smallBreakpoint) {
+      history.goBack();
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <>
       <div className={classes.moweb}>
@@ -66,7 +80,7 @@ function Header({ history, currentTab }) {
                   button
                   key="programming"
                   selected={shouldUnderline(PROGRAMMING)}
-                  onClick={() => history.push(PROGRAMMING)}
+                  onClick={() => history.push(PROGRAMMING_PATH)}
                 >
                   <div className={classes.drawerItemStyle}>programming</div>
                 </ListItem>
@@ -136,8 +150,13 @@ function Header({ history, currentTab }) {
               </div>
             </List>
           </SwipeableDrawer>
-          <button className={classes.iconStyle} onClick={() => setOpen(true)}>
-            <Icon icon={menuLine} style={{ fontSize: "26px" }} />
+          <button className={classes.iconStyle} onClick={handleOnclick}>
+            <Icon
+              icon={
+                smallBreakpoint && showBackArrow ? roundArrowBackIos : menuLine
+              }
+              style={{ fontSize: "24px", color: "#000100" }}
+            />
           </button>
           <button
             onClick={() => history.push(HOME_PATH)}
@@ -254,8 +273,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "40px",
 
     [theme.breakpoints.down("sm")]: {
-      paddingRight: "8px",
-      paddingLeft: "8px",
       paddingTop: "24px",
       paddingBottom: "24px",
       display: "flex",

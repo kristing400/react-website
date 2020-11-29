@@ -1,19 +1,22 @@
 import React from "react";
-import { ReactComponent as Arrow } from "../assets/icons/arrow_back.svg";
 import { withRouter } from "react-router";
+import { makeStyles } from "@material-ui/core/styles";
+import roundArrowBackIos from "@iconify/icons-ic/round-arrow-back-ios";
+import { Icon } from "@iconify/react";
 
 function ProjectTitle({ title, subtitle, history }) {
+  const classes = useStyles();
   return (
-    <div style={{ display: "flex", alignItems: "flexStart" }}>
-      <button
-        onClick={() => history.goBack()}
-        style={{ height: "100%", marginRight: "16px" }}
-      >
-        <Arrow width={24} height={24} />
+    <div className={classes.container}>
+      <button onClick={() => history.goBack()} className={classes.button}>
+        <Icon
+          icon={roundArrowBackIos}
+          style={{ fontSize: "24px", color: "#000100" }}
+        />
       </button>
-      <div style={{ paddingBottom: "24px" }}>
-        <h3 style={titleStyle}>{title}</h3>
-        <h4 style={subtitleStyle}>{subtitle}</h4>
+      <div className={classes.titleContainer}>
+        <h3 className={classes.titleStyle}>{title}</h3>
+        <h4 className={classes.subtitleStyle}>{subtitle}</h4>
       </div>
     </div>
   );
@@ -21,19 +24,49 @@ function ProjectTitle({ title, subtitle, history }) {
 
 export default withRouter(ProjectTitle);
 
-const titleStyle = {
-  fontFamily: "Julius Sans One",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontSize: "24px",
-  lineHeight: "26px",
-  margin: 0,
-};
-
-const subtitleStyle = {
-  fontFamily: "Julius Sans One",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontSize: "16px",
-  lineHeight: "16px",
-};
+const useStyles = makeStyles((theme) => ({
+  container: { display: "flex", alignItems: "flexStart" },
+  button: {
+    height: "100%",
+    marginRight: "16px",
+    [theme.breakpoints.down("sm")]: {
+      visibility: "hidden",
+      width: 0,
+      height: 0,
+      padding: 0,
+      margin: 0,
+    },
+  },
+  titleContainer: {
+    paddingBottom: "24px",
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "24px",
+      paddingBottom: "24px",
+    },
+  },
+  titleStyle: {
+    fontFamily: "Julius Sans One",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "24px",
+    lineHeight: "26px",
+    margin: 0,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+    },
+  },
+  subtitleStyle: {
+    fontFamily: "Julius Sans One",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "16px",
+    lineHeight: "16px",
+    [theme.breakpoints.down("sm")]: {
+      margin: 0,
+      fontFamily: "Lato",
+      fontWeight: 400,
+      fontSize: "14px",
+      marginTop: "8px",
+    },
+  },
+}));

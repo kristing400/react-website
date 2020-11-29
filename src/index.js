@@ -25,8 +25,8 @@ export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
 ReactDOM.render(
   <Router>
     <HashRouter basename="/">
-      <div style={{ overflowX: "hidden" }}>
-        <Container maxWidth="lg">
+      <Container maxWidth="lg">
+        <div style={{ overflowX: "hidden" }}>
           <Route exact path={PROGRAMMING_PATH}>
             <Programming />
           </Route>
@@ -45,8 +45,8 @@ ReactDOM.render(
           <Route exact path={HOME_PATH}>
             <Home />
           </Route>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </HashRouter>
   </Router>,
   document.getElementById("root")
