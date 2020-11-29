@@ -85,14 +85,14 @@ function Header({ history, currentTab, showBackArrow }) {
                   <div className={classes.drawerItemStyle}>programming</div>
                 </ListItem>
 
-                <ListItem
+                {/* <ListItem
                   button
                   key="code_art"
                   selected={shouldUnderline(CODE_ART)}
                   onClick={() => history.push(CODE_ART_PATH)}
                 >
                   <div className={classes.drawerItemStyle}>code/art</div>
-                </ListItem>
+                </ListItem> */}
 
                 <ListItem
                   button
@@ -190,13 +190,13 @@ function Header({ history, currentTab, showBackArrow }) {
             >
               programming
             </NavItem>
-            <NavItem
+            {/* <NavItem
               isFocused={shouldUnderline(CODE_ART)}
               name={CODE_ART}
               onClick={() => history.push(CODE_ART_PATH)}
             >
               code/art
-            </NavItem>
+            </NavItem> */}
             <NavItem
               isFocused={shouldUnderline(WATERCOLORS)}
               name={WATERCOLORS}
