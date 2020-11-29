@@ -30,8 +30,8 @@ export default function Net() {
           direction="row"
           container
           justify="center"
-          alignItems="center"
-          spacing={4}
+          alignItems="flex-start"
+          spacing={smallBreakpoint ? 4 : 8}
         >
           <Grid item md={8} xs={12}>
             <div>
@@ -57,7 +57,7 @@ export default function Net() {
                 </p>
               </div>
               <div className={classes.section}>
-                <h3 className={classes.subtitleStyle}>The Team</h3>
+                <h3 className={classes.subtitleStyle}>The team</h3>
                 <p>
                   Christina Ou: Software Engineer
                   <br />
@@ -75,29 +75,30 @@ export default function Net() {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12}>
-            <h3 className={(classes.subtitleStyle, classes.moweb)}>Screens</h3>
-          </Grid>
+          {smallBreakpoint && (
+            <Grid item xs={12}>
+              <h3 className={(classes.subtitleStyle, classes.moweb)}>
+                Screens
+              </h3>
+            </Grid>
+          )}
+
           <Grid item md={4} xs={6}>
-            <h3 className={(classes.subtitleStyle, classes.center)}>Home</h3>
+            <h3 className={classes.center}>Home screen</h3>
             <img src={home} width="100%" />
           </Grid>
           <Grid item md={4} xs={6}>
-            <h3 className={(classes.subtitleStyle, classes.center)}>
-              Event info
-            </h3>
+            <h3 className={(classes.center, classes.center)}>Event info</h3>
             <img src={eventInfo} width="100%" />
           </Grid>
           <Grid item md={4} xs={6}>
-            <h3 className={(classes.subtitleStyle, classes.center)}>
-              Building NET
+            <h3 className={(classes.center, classes.center)}>
+              Recording & processing conversations
             </h3>
             <img src={inProgress} width="100%" />
           </Grid>
           <Grid item md={4} xs={6}>
-            <h3 className={(classes.subtitleStyle, classes.center)}>
-              NET preview
-            </h3>
+            <h3 className={(classes.center, classes.center)}>NET preview</h3>
             <img
               src={results}
               height={smallBreakpoint && "276px"}
@@ -105,7 +106,7 @@ export default function Net() {
             />
           </Grid>
           <Grid item md={4} xs={6}>
-            <h3 className={(classes.subtitleStyle, classes.center)}>
+            <h3 className={(classes.center, classes.center)}>
               Constructed profile
             </h3>
             <img src={profiles} width="100%" />
@@ -182,13 +183,14 @@ const useStyles = makeStyles((theme) => ({
   },
 
   subtitleStyle: {
-    fontSize: "18px",
+    fontSize: "16px",
     fontWeight: 600,
-    width: "100%",
+    margin: 0,
+    paddingBottom: "16px",
   },
 
   buttonContainer: {
-    paddingTop: "16px",
+    paddingTop: "8px",
     paddingBottom: "8px",
   },
 
@@ -200,7 +202,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   section: {
-    paddingBottom: "8px",
+    paddingBottom: "16px",
   },
   container: {
     paddingBottom: "80px",
@@ -209,7 +211,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   center: {
+    fontSize: "16px",
+    fontWeight: 600,
     textAlign: "center",
+    margin: 0,
+    marginBottom: "16px",
     [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
       width: 0,

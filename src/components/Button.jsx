@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
     paddingRight: "32px",
     color: "#000100",
     fontFamily: "Lato, sans-serif",
-    fontSize: "14px",
+    fontSize: "16px",
     "&:hover": {
       backgroundColor: "#EBEBEB",
     },

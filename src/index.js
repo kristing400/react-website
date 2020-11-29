@@ -10,6 +10,7 @@ import ShanghaiSubway from "./components/ShanghaiSubway";
 import Home from "./components/Home";
 import Net from "./components/Net";
 import { Container } from "@material-ui/core";
+import Equerry from "./components/Equerry";
 
 export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
@@ -41,6 +42,9 @@ ReactDOM.render(
           </Route>
           <Route exact path={NET_PATH}>
             <Net />
+          </Route>
+          <Route exact path={EQUERRY_PATH}>
+            <Equerry />
           </Route>
           <Route exact path={HOME_PATH}>
             <Home />
