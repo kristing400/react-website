@@ -11,12 +11,6 @@ import Home from "./components/Home";
 import Net from "./components/Net";
 import { Container } from "@material-ui/core";
 
-const contentStyle = {
-  paddingLeft: "256px",
-  paddingRight: "256px",
-  paddingBottom: "56px",
-};
-
 export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
 export const SHANGHAI_SUBWAY_PATH = "/shanghai-subway";

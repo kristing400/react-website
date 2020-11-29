@@ -18,7 +18,7 @@ function Navigation({ currentTab, history, showBackArrow }) {
         <div
           style={{
             width: "256px",
-            position: "absolute",
+            position: "fixed",
             left: 0,
             top: "304",
           }}

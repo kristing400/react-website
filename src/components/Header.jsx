@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import menuLine from "@iconify/icons-clarity/menu-line";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";

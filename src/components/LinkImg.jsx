@@ -45,37 +45,38 @@ export default function LinkImg({
 
 const useStyles = makeStyles(() => ({
   container: {
-    background: "linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%), #94c5cc;"
+    background:
+      "linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%), #94c5cc;",
   },
   titleStyle: {
-  fontFamily: "Julius Sans One",
-  fontSize: "20px",
-  margin: 0,
-  fontWeight: 600,
-  lineHeight: 1.4,
-  paddingLeft: '16px',
-  paddingRight: "16px",
-},
-descriptionStyle:{
-  fontSize: "18px",
-  fontWeight: 400,
-},
-subtitle: {
-  fontSize: "18px",
-  fontWeight: 400,
-  marginBottom: "4px",
-},
-overlayText: {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  flexDirection: "column",
-  textAlign: "center",
-  visibility: "visible",
-  zIndex: 100,
-  color: "#000100",
-  fontSize: "16px",
-  fontWeight: 800,
-  height: "100%",
-}
+    fontFamily: "Julius Sans One",
+    fontSize: "20px",
+    margin: 0,
+    fontWeight: 600,
+    lineHeight: 1.4,
+    paddingLeft: "16px",
+    paddingRight: "16px",
+  },
+  descriptionStyle: {
+    fontSize: "18px",
+    fontWeight: 400,
+  },
+  subtitle: {
+    fontSize: "18px",
+    fontWeight: 400,
+    marginBottom: "4px",
+  },
+  overlayText: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    textAlign: "center",
+    visibility: "visible",
+    zIndex: 100,
+    color: "#000100",
+    fontSize: "16px",
+    fontWeight: 800,
+    height: "100%",
+  },
 }));

@@ -1,13 +1,25 @@
 import React from "react";
+import { ReactComponent as Arrow } from "../assets/icons/arrow_back.svg";
+import { withRouter } from "react-router";
 
-export default function ProjectTitle({ title, subtitle }) {
+function ProjectTitle({ title, subtitle, history }) {
   return (
-    <div style={{ paddingBottom: "24px" }}>
-      <h3 style={titleStyle}>{title}</h3>
-      <h4 style={subtitleStyle}>{subtitle}</h4>
+    <div style={{ display: "flex", alignItems: "flexStart" }}>
+      <button
+        onClick={() => history.goBack()}
+        style={{ height: "100%", marginRight: "16px" }}
+      >
+        <Arrow width={24} height={24} />
+      </button>
+      <div style={{ paddingBottom: "24px" }}>
+        <h3 style={titleStyle}>{title}</h3>
+        <h4 style={subtitleStyle}>{subtitle}</h4>
+      </div>
     </div>
   );
 }
+
+export default withRouter(ProjectTitle);
 
 const titleStyle = {
   fontFamily: "Julius Sans One",

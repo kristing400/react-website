@@ -6,13 +6,13 @@ import net from "../assets/programming/net/cover.png";
 import equerry from "../assets/programming/equerry/equerry.png";
 import tailord from "../assets/programming/tailord/tailord.jpg";
 import cozmo from "../assets/programming/cozmo/cover.jpg";
-import pressureClassifier from '../assets/programming/pressureClassifier/pressureClassifier.jpg';
-import masked from '../assets/programming/masked/masked.png';
-import wickihow from '../assets/programming/wickihow/wickihow.jpg';
-import aero from '../assets/programming/aero/aero.jpg';
-import escapeRoom from '../assets/programming/escapeRoom/escapeRoom.png';
-import geoCamera from '../assets/programming/geoCamera/geoCamera.jpg';
-import rubeGoldberg from '../assets/programming/rubeGoldberg/rubegoldberg.png';
+import pressureClassifier from "../assets/programming/pressureClassifier/pressureClassifier.jpg";
+import masked from "../assets/programming/masked/masked.png";
+import wickihow from "../assets/programming/wickihow/wickihow.jpg";
+import aero from "../assets/programming/aero/aero.jpg";
+import escapeRoom from "../assets/programming/escapeRoom/escapeRoom.png";
+import geoCamera from "../assets/programming/geoCamera/geoCamera.jpg";
+import rubeGoldberg from "../assets/programming/rubeGoldberg/rubegoldberg.png";
 
 import { withRouter } from "react-router";
 import LinkImg from "./LinkImg";
@@ -28,7 +28,7 @@ function Programming({ history }) {
       title: "NET",
       subtitle: "Facebook Global Hackathon Finals 2018",
       description: "Top 6 Finalist",
-      href: NET_PATH
+      href: NET_PATH,
     },
     {
       src: equerry,
@@ -129,9 +129,8 @@ function Programming({ history }) {
       title: "tailor'd",
       subtitle: "HACKCMU 2016",
       description: "Best Mobile App Award",
-      href:TAILORD_PATH
+      href: TAILORD_PATH,
     },
-    
   ];
 
   const onClick = useCallback(
@@ -161,12 +160,12 @@ function Programming({ history }) {
   return (
     <>
       <Navigation currentTab={PROGRAMMING} />
-        <Gallery
-          margin={16}
-          direction="column"
-          photos={photos}
-          renderImage={renderImage}
-        />
+      <Gallery
+        margin={16}
+        direction="column"
+        photos={photos}
+        renderImage={renderImage}
+      />
     </>
   );
 }
