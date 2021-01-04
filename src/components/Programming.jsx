@@ -16,7 +16,13 @@ import rubeGoldberg from "../assets/programming/rubeGoldberg/rubegoldberg.png";
 
 import { withRouter } from "react-router";
 import LinkImg from "./LinkImg";
-import { NET_PATH, TAILORD_PATH, EQUERRY_PATH, COZMO_PATH } from "..";
+import {
+  NET_PATH,
+  TAILORD_PATH,
+  EQUERRY_PATH,
+  COZMO_PATH,
+  GEOCAMERA_PATH,
+} from "..";
 
 function Programming({ history }) {
   const photos = [
@@ -78,7 +84,7 @@ function Programming({ history }) {
       title: "geo camera",
       subtitle: "Experimental Capure",
       description: "Spring 2017",
-      href: EQUERRY_PATH,
+      href: GEOCAMERA_PATH,
     },
     {
       src: aero,
