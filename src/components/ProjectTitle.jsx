@@ -3,21 +3,28 @@ import { withRouter } from "react-router";
 import { makeStyles } from "@material-ui/core/styles";
 import roundArrowBackIos from "@iconify/icons-ic/round-arrow-back-ios";
 import { Icon } from "@iconify/react";
+import { PROGRAMMING_PATH } from "..";
 
 function ProjectTitle({ title, subtitle, history }) {
   const classes = useStyles();
   return (
-    <div className={classes.container}>
-      <button onClick={() => history.goBack()} className={classes.button}>
-        <Icon
-          icon={roundArrowBackIos}
-          style={{ fontSize: "24px", color: "#000100" }}
-        />
+    <div>
+      <button
+        onClick={() => history.push(PROGRAMMING_PATH)}
+        className={classes.button}
+      >
+        <div className={classes.icon}>
+          {" "}
+          <Icon
+            icon={roundArrowBackIos}
+            style={{ fontSize: "24px", color: "#000100" }}
+          />
+        </div>
+        <div className={classes.titleContainer}>
+          <h3 className={classes.titleStyle}>{title}</h3>
+          <h4 className={classes.subtitleStyle}>{subtitle}</h4>
+        </div>
       </button>
-      <div className={classes.titleContainer}>
-        <h3 className={classes.titleStyle}>{title}</h3>
-        <h4 className={classes.subtitleStyle}>{subtitle}</h4>
-      </div>
     </div>
   );
 }
@@ -25,9 +32,7 @@ function ProjectTitle({ title, subtitle, history }) {
 export default withRouter(ProjectTitle);
 
 const useStyles = makeStyles((theme) => ({
-  container: { display: "flex", alignItems: "flexStart" },
-  button: {
-    height: "100%",
+  icon: {
     marginRight: "16px",
     [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
@@ -37,8 +42,14 @@ const useStyles = makeStyles((theme) => ({
       margin: 0,
     },
   },
+  button: {
+    height: "100%",
+    display: "flex",
+    alignItems: "flexStart",
+  },
   titleContainer: {
     paddingBottom: "24px",
+    textAlign: "left",
     [theme.breakpoints.down("sm")]: {
       paddingTop: "24px",
       paddingBottom: "24px",

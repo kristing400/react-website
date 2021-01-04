@@ -16,7 +16,7 @@ import rubeGoldberg from "../assets/programming/rubeGoldberg/rubegoldberg.png";
 
 import { withRouter } from "react-router";
 import LinkImg from "./LinkImg";
-import { NET_PATH, TAILORD_PATH, EQUERRY_PATH } from "..";
+import { NET_PATH, TAILORD_PATH, EQUERRY_PATH, COZMO_PATH } from "..";
 
 function Programming({ history }) {
   const photos = [
@@ -44,11 +44,11 @@ function Programming({ history }) {
       src: cozmo,
       width: 16,
       height: 10,
-      alt: "auto-pilot cozmo",
-      title: "auto-pilot cozmo",
+      alt: "autopilot cozmo",
+      title: "autopilot cozmo",
       subtitle: "Cognitive Robotics",
       description: "Spring 2018",
-      href: EQUERRY_PATH,
+      href: COZMO_PATH,
     },
     {
       src: masked,

@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import Net from "./components/Net";
 import { Container } from "@material-ui/core";
 import Equerry from "./components/Equerry";
+import Cozmo from "./components/Cozmo";
 
 export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
@@ -19,6 +20,7 @@ export const WATERCOLORS_PATH = "/watercolors";
 export const EQUERRY_PATH = "/programmming/equerry";
 export const NET_PATH = "/programmming/net";
 export const TAILORD_PATH = "/programmming/tailord";
+export const COZMO_PATH = "/programming/cozmo";
 export const HOME_PATH = "/";
 
 export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
@@ -45,6 +47,9 @@ ReactDOM.render(
           </Route>
           <Route exact path={EQUERRY_PATH}>
             <Equerry />
+          </Route>
+          <Route exact path={COZMO_PATH}>
+            <Cozmo />
           </Route>
           <Route exact path={HOME_PATH}>
             <Home />
