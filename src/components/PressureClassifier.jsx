@@ -4,11 +4,6 @@ import { PROGRAMMING } from "./Header";
 import ProjectTitle from "./ProjectTitle";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "./Button";
-import notConfident from "../assets/programming/cozmo/cozmo_not_confident.png";
-import confident from "../assets/programming/cozmo/cozmo_confident.png";
-import convLayer from "../assets/programming/cozmo/cozmo_conv_layer.png";
-import model from "../assets/programming/cozmo/cozmo_model.png";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 
@@ -40,6 +35,7 @@ export default function PressureClassifier() {
                 allow="autoplay"
                 allowfullscreen
                 className={classes.iFrame}
+                title="pressure classifier"
               ></iframe>
             </div>
           </Grid>
