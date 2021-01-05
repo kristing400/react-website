@@ -22,6 +22,7 @@ import {
   EQUERRY_PATH,
   COZMO_PATH,
   GEOCAMERA_PATH,
+  PRESSURE_CLASSIFIER_PATH,
 } from "..";
 
 function Programming({ history }) {
@@ -74,7 +75,7 @@ function Programming({ history }) {
       title: "pressure classifier",
       subtitle: "Experimental Capture",
       description: "Spring 2017",
-      href: EQUERRY_PATH,
+      href: PRESSURE_CLASSIFIER_PATH,
     },
     {
       src: geoCamera,
