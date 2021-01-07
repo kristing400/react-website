@@ -41,6 +41,7 @@ export default function Net() {
                 allowTransparency={true}
                 allowFullScreen={true}
                 scrolling="no"
+                title="Facebook Hackathon"
               ></iframe>
             </div>
           </Grid>
@@ -85,17 +86,17 @@ export default function Net() {
 
           <Grid item md={4} xs={6}>
             <h3 className={classes.center}>Home screen</h3>
-            <img src={home} width="100%" />
+            <img src={home} width="100%" alt="home" />
           </Grid>
           <Grid item md={4} xs={6}>
             <h3 className={(classes.center, classes.center)}>Event info</h3>
-            <img src={eventInfo} width="100%" />
+            <img src={eventInfo} width="100%" alt="event info" />
           </Grid>
           <Grid item md={4} xs={6}>
             <h3 className={(classes.center, classes.center)}>
               Recording & processing conversations
             </h3>
-            <img src={inProgress} width="100%" />
+            <img src={inProgress} width="100%" alt="recording" />
           </Grid>
           <Grid item md={4} xs={6}>
             <h3 className={(classes.center, classes.center)}>NET preview</h3>
@@ -103,13 +104,14 @@ export default function Net() {
               src={results}
               height={smallBreakpoint && "276px"}
               width="100%"
+              alt="resutls"
             />
           </Grid>
           <Grid item md={4} xs={6}>
             <h3 className={(classes.center, classes.center)}>
               Constructed profile
             </h3>
-            <img src={profiles} width="100%" />
+            <img src={profiles} width="100%" alt="profile" />
           </Grid>
           <Grid item md={4}>
             <div className={classes.textContainer}>

@@ -40,11 +40,11 @@ export default function Equerry() {
         >
           <Grid item md={3} xs={6}>
             <h3 className={classes.center}>Home screen</h3>
-            <img src={home} width="100%" />
+            <img src={home} width="100%" alt="home" />
           </Grid>
           <Grid item md={3} xs={6}>
             <h3 className={classes.center}>Neighborhood saftey map</h3>
-            <img src={map} width="100%" />
+            <img src={map} width="100%" alt="map" />
           </Grid>
           <Grid item md={6}>
             <div className={classes.textContainer}>
@@ -85,11 +85,11 @@ export default function Equerry() {
           </Grid>
           <Grid item md={3} xs={6}>
             <h3 className={classes.center}>Begin onboarding process</h3>
-            <img src={onboarding1} width="100%" />
+            <img src={onboarding1} width="100%" alt="onboarding begin" />
           </Grid>
           <Grid item md={3} xs={6}>
             <h3 className={classes.center}>Fill out basic info</h3>
-            <img src={onboarding2} width="100%" />
+            <img src={onboarding2} width="100%" alt="onboarding info" />
           </Grid>
           <Grid item md={3} xs={6}>
             <h3 className={classes.center}>Customize voice triggers</h3>
@@ -97,13 +97,14 @@ export default function Equerry() {
               src={onboarding3}
               height={smallBreakpoint && "276px"}
               width="100%"
+              alt="voice triggers"
             />
           </Grid>
           <Grid item md={3} xs={6}>
             <h3 className={(classes.subtitleStyle, classes.center)}>
               Add emergency alerts & contacts
             </h3>
-            <img src={onboarding4} width="100%" />
+            <img src={onboarding4} width="100%" alt="contacts" />
           </Grid>
           <Grid item md={4}>
             <div className={classes.textContainer}>
@@ -149,13 +150,13 @@ export default function Equerry() {
             </div>
           </Grid>
           <Grid item md={4} xs={4}>
-            <img src={storyboard1} width="100%" />
+            <img src={storyboard1} width="100%" alt="storyboard 1" />
           </Grid>
           <Grid item md={4} xs={4}>
-            <img src={storyboard2} width="100%" />
+            <img src={storyboard2} width="100%" alt="storyboard 2" />
           </Grid>
           <Grid item md={4} xs={4}>
-            <img src={storyboard3} width="100%" />
+            <img src={storyboard3} width="100%" alt="storyboard 3" />
           </Grid>
           <Grid item md={8}>
             <div className={classes.textContainer}>
@@ -199,28 +200,6 @@ export default function Equerry() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  moweb: {
-    visibility: "hidden",
-    width: 0,
-    height: 0,
-    margin: 0,
-
-    [theme.breakpoints.down("sm")]: {
-      visibility: "visible",
-      height: "100%",
-      width: "100%",
-    },
-  },
-  iFrame: {
-    width: "100%",
-    height: "450px",
-    border: 0,
-
-    [theme.breakpoints.down("sm")]: {
-      height: "190px",
-    },
-  },
-
   subtitleStyle: {
     fontSize: "16px",
     fontWeight: 600,

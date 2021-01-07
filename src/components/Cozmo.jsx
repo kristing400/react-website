@@ -40,6 +40,7 @@ export default function Cozmo() {
                 allow="autoplay; encrypted-media"
                 allowfullscreen
                 className={classes.iFrame}
+                title="Autopilot Cozmo"
               ></iframe>
             </div>
           </Grid>
@@ -93,6 +94,7 @@ export default function Cozmo() {
               src={model}
               className={!smallBreakpoint && classes.border}
               width="100%"
+              alt="model"
             />
           </Grid>
           <Grid item md={6}>
@@ -100,6 +102,7 @@ export default function Cozmo() {
               src={confident}
               className={!smallBreakpoint && classes.border}
               width="100%"
+              alt="confident distribution"
             />
           </Grid>
           <Grid item md={6}>
@@ -107,6 +110,7 @@ export default function Cozmo() {
               src={notConfident}
               className={!smallBreakpoint && classes.border}
               width="100%"
+              alt="not confident distribution"
             />
           </Grid>
           <Grid item md={8}>
@@ -114,6 +118,7 @@ export default function Cozmo() {
               src={convLayer}
               className={!smallBreakpoint && classes.border}
               width="100%"
+              alt="CNN"
             />
           </Grid>
           <Grid item md={4}>
@@ -193,18 +198,6 @@ export default function Cozmo() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  moweb: {
-    visibility: "hidden",
-    width: 0,
-    height: 0,
-    margin: 0,
-
-    [theme.breakpoints.down("sm")]: {
-      visibility: "visible",
-      height: "100%",
-      width: "100%",
-    },
-  },
   border: {
     border: "1px solid rgba(0, 0, 0, 0.1)",
     boxSizing: "border-box",
@@ -246,19 +239,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "80px",
     [theme.breakpoints.down("sm")]: {
       paddingBottom: "32px",
-    },
-  },
-  center: {
-    fontSize: "16px",
-    fontWeight: 600,
-    textAlign: "center",
-    margin: 0,
-    marginBottom: "16px",
-    [theme.breakpoints.down("sm")]: {
-      visibility: "hidden",
-      width: 0,
-      height: 0,
-      margin: 0,
     },
   },
 }));

@@ -23,6 +23,7 @@ import {
   COZMO_PATH,
   GEOCAMERA_PATH,
   PRESSURE_CLASSIFIER_PATH,
+  MASKED_PATH,
 } from "..";
 
 function Programming({ history }) {
@@ -65,7 +66,7 @@ function Programming({ history }) {
       title: "masked",
       subtitle: "BXA Capstone Project",
       description: "Fall 2018",
-      href: EQUERRY_PATH,
+      href: MASKED_PATH,
     },
     {
       src: pressureClassifier,

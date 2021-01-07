@@ -2,29 +2,41 @@ import React from "react";
 import { withRouter } from "react-router";
 import { makeStyles } from "@material-ui/core/styles";
 import roundArrowBackIos from "@iconify/icons-ic/round-arrow-back-ios";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 import { Icon } from "@iconify/react";
 import { PROGRAMMING_PATH } from "..";
 
 function ProjectTitle({ title, subtitle, history }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const smallBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
+  const content = (
+    <>
+      <div className={classes.icon}>
+        <Icon
+          icon={roundArrowBackIos}
+          style={{ fontSize: "24px", color: "#000100" }}
+        />
+      </div>
+      <div className={classes.titleContainer}>
+        <h3 className={classes.titleStyle}>{title}</h3>
+        <h4 className={classes.subtitleStyle}>{subtitle}</h4>
+      </div>
+    </>
+  );
   return (
     <div>
-      <button
-        onClick={() => history.push(PROGRAMMING_PATH)}
-        className={classes.button}
-      >
-        <div className={classes.icon}>
-          {" "}
-          <Icon
-            icon={roundArrowBackIos}
-            style={{ fontSize: "24px", color: "#000100" }}
-          />
-        </div>
-        <div className={classes.titleContainer}>
-          <h3 className={classes.titleStyle}>{title}</h3>
-          <h4 className={classes.subtitleStyle}>{subtitle}</h4>
-        </div>
-      </button>
+      {smallBreakpoint ? (
+        <div>{content}</div>
+      ) : (
+        <button
+          onClick={() => history.push(PROGRAMMING_PATH)}
+          className={classes.button}
+        >
+          {content}
+        </button>
+      )}
     </div>
   );
 }
@@ -46,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     alignItems: "flexStart",
+    padding: 0,
   },
   titleContainer: {
     paddingBottom: "24px",
@@ -76,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
       margin: 0,
       fontFamily: "Lato",
       fontWeight: 400,
-      fontSize: "14px",
+      // fontSize: "14px",
       marginTop: "8px",
     },
   },

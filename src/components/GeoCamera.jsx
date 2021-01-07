@@ -4,7 +4,6 @@ import { PROGRAMMING } from "./Header";
 import ProjectTitle from "./ProjectTitle";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "./Button";
 import cathedral from "../assets/programming/geoCamera/geo_camera1.1.jpg";
 import cathedralAntiGhost from "../assets/programming/geoCamera/geo_camera1.2.jpg";
 import sculpture from "../assets/programming/geoCamera/geo_camera2.1.jpg";
@@ -45,27 +44,10 @@ export default function GeoCamera() {
             </Grid>
           )}
           <Grid item md={4}>
-            <img src={ceiling} width="100%" />
+            <img src={ceiling} width="100%" alt="ceiling" />
           </Grid>
           <Grid item md={4}>
-            <img src={celingAntiGhost} width="100%" />
-          </Grid>
-          {!smallBreakpoint && (
-            <Grid item md={2}>
-              <div className={classes.sideTextRight}>Anti-ghost</div>
-            </Grid>
-          )}
-
-          {!smallBreakpoint && (
-            <Grid item md={2}>
-              <div className={classes.sideTextLeft}>Normal</div>
-            </Grid>
-          )}
-          <Grid item md={4}>
-            <img src={eifle} width="100%" />
-          </Grid>
-          <Grid item md={4}>
-            <img src={eifleAntiGhost} width="100%" />
+            <img src={celingAntiGhost} width="100%" alt="ceilng anti-ghost" />
           </Grid>
           {!smallBreakpoint && (
             <Grid item md={2}>
@@ -79,27 +61,14 @@ export default function GeoCamera() {
             </Grid>
           )}
           <Grid item md={4}>
-            <img src={windows} width="100%" />
+            <img src={eifle} width="100%" alt="Eifle tower" />
           </Grid>
           <Grid item md={4}>
-            <img src={windowsAntiGhost} width="100%" />
-          </Grid>
-          {!smallBreakpoint && (
-            <Grid item md={2}>
-              <div className={classes.sideTextRight}>Anti-ghost</div>
-            </Grid>
-          )}
-
-          {!smallBreakpoint && (
-            <Grid item md={2}>
-              <div className={classes.sideTextLeft}>Normal</div>
-            </Grid>
-          )}
-          <Grid item md={4}>
-            <img src={sculpture} width="100%" />
-          </Grid>
-          <Grid item md={4}>
-            <img src={sculptureAntiGhost} width="100%" />
+            <img
+              src={eifleAntiGhost}
+              width="100%"
+              alt="Eifle tower anti-ghost"
+            />
           </Grid>
           {!smallBreakpoint && (
             <Grid item md={2}>
@@ -113,10 +82,52 @@ export default function GeoCamera() {
             </Grid>
           )}
           <Grid item md={4}>
-            <img src={cathedral} width="100%" />
+            <img src={windows} width="100%" alt="windows" />
           </Grid>
           <Grid item md={4}>
-            <img src={cathedralAntiGhost} width="100%" />
+            <img src={windowsAntiGhost} width="100%" alt="windows anti-ghost" />
+          </Grid>
+          {!smallBreakpoint && (
+            <Grid item md={2}>
+              <div className={classes.sideTextRight}>Anti-ghost</div>
+            </Grid>
+          )}
+
+          {!smallBreakpoint && (
+            <Grid item md={2}>
+              <div className={classes.sideTextLeft}>Normal</div>
+            </Grid>
+          )}
+          <Grid item md={4}>
+            <img src={sculpture} width="100%" alt="sculpture" />
+          </Grid>
+          <Grid item md={4}>
+            <img
+              src={sculptureAntiGhost}
+              width="100%"
+              alt="sculpture anti-ghost"
+            />
+          </Grid>
+          {!smallBreakpoint && (
+            <Grid item md={2}>
+              <div className={classes.sideTextRight}>Anti-ghost</div>
+            </Grid>
+          )}
+
+          {!smallBreakpoint && (
+            <Grid item md={2}>
+              <div className={classes.sideTextLeft}>Normal</div>
+            </Grid>
+          )}
+          <Grid item md={4}>
+            <img src={cathedral} width="100%" alt="cathedral" />
+          </Grid>
+          <Grid item md={4}>
+            <img
+              src={cathedralAntiGhost}
+              width="100%"
+              alt="cathedral anti-ghost"
+            />
           </Grid>
           {!smallBreakpoint && (
             <Grid item md={2}>
@@ -190,7 +201,7 @@ export default function GeoCamera() {
             </div>
           </Grid>
           <Grid item md={6}>
-            <img src={tsne} width="100%" />
+            <img src={tsne} width="100%" alt="tsne" />
           </Grid>
         </Grid>
       </div>
@@ -199,18 +210,6 @@ export default function GeoCamera() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  moweb: {
-    visibility: "hidden",
-    width: 0,
-    height: 0,
-    margin: 0,
-
-    [theme.breakpoints.down("sm")]: {
-      visibility: "visible",
-      height: "100%",
-      width: "100%",
-    },
-  },
   sideTextLeft: {
     transform: "rotate(-90deg) translateX(18px)",
     transformOrigin: "bottom right",
@@ -232,31 +231,12 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     color: "#6f727b ",
   },
-  border: {
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    boxSizing: "border-box",
-    borderRadius: "8px",
-  },
-  iFrame: {
-    width: "100%",
-    height: "450px",
-    border: 0,
-
-    [theme.breakpoints.down("sm")]: {
-      height: "190px",
-    },
-  },
 
   subtitleStyle: {
     fontSize: "16px",
     fontWeight: 600,
     margin: 0,
     paddingBottom: "16px",
-  },
-
-  buttonContainer: {
-    paddingTop: "8px",
-    paddingBottom: "8px",
   },
 
   textContainer: {
@@ -266,26 +246,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "start",
     height: "100%",
   },
+
   section: {
     paddingBottom: "16px",
   },
+
   container: {
     paddingBottom: "80px",
     [theme.breakpoints.down("sm")]: {
       paddingBottom: "32px",
-    },
-  },
-  center: {
-    fontSize: "16px",
-    fontWeight: 600,
-    textAlign: "center",
-    margin: 0,
-    marginBottom: "16px",
-    [theme.breakpoints.down("sm")]: {
-      visibility: "hidden",
-      width: 0,
-      height: 0,
-      margin: 0,
     },
   },
 }));
