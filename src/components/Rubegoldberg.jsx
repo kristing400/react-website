@@ -6,6 +6,7 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import TextLink from "./TextLink";
 
 export default function Rubegoldberg() {
   const classes = useStyles();
@@ -44,7 +45,8 @@ export default function Rubegoldberg() {
                 <p>
                   For this project, we wanted to create an immersive experience
                   where the user can interact with his/her surroundings. We
-                  decided to create a Rube-Goldberg Machine in Unity. What
+                  decided to create a Rube-Goldberg Machine in{" "}
+                  <TextLink href="https://unity3d.com/">Unity</TextLink>. What
                   happens at the end when the final apple lands on the escape
                   key? The program exits!
                 </p>

@@ -17,6 +17,7 @@ import storyboard2 from "../assets/programming/equerry/equerry_storyboard_2.JPG"
 import storyboard3 from "../assets/programming/equerry/equerry_storyboard_3.JPG";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import TextLink from "./TextLink";
 
 export default function Equerry() {
   const classes = useStyles();
@@ -111,15 +112,28 @@ export default function Equerry() {
               <div>
                 <h3 className={classes.subtitleStyle}>Technologies used</h3>
                 <p>
-                  p5.js: Sends audio clip from Equerry device.
+                  <TextLink href="https://p5js.org/">p5.js</TextLink>: Sends
+                  audio clip from Equerry device.
                   <br />
-                  Django: Web Framework
+                  <TextLink href="https://www.djangoproject.com/">
+                    Django
+                  </TextLink>
+                  : Web Framework
                   <br />
-                  Twilio API: Making calls and texts
+                  <TextLink href="https://www.twilio.com/docs/">
+                    Twilio API
+                  </TextLink>
+                  : Making calls and texts
                   <br />
-                  Google Voice Recognition: Performing speech to text
+                  <TextLink href="https://cloud.google.com/speech-to-text/">
+                    Google Speech
+                  </TextLink>
+                  : Performing speech to text
                   <br />
-                  Google Maps API: Show potentially dangerous areas
+                  <TextLink href="https://cloud.google.com/maps-platform/">
+                    Google Maps API
+                  </TextLink>
+                  : Show potentially dangerous areas
                 </p>
               </div>
             </div>

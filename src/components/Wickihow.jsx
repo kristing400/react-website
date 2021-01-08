@@ -10,6 +10,7 @@ import Button from "./Button";
 import wickihow from "../assets/programming/wickihow/wickihow.jpg";
 import wickihow2 from "../assets/programming/wickihow/wickihow_2.png";
 import wickihow3 from "../assets/programming/wickihow/wickihow_3.png";
+import TextLink from "./TextLink";
 
 export default function Wickihow() {
   const classes = useStyles();
@@ -63,11 +64,16 @@ export default function Wickihow() {
               <div>
                 <h3 className={classes.subtitleStyle}>Technologies used</h3>
                 <p>
-                  Django: web framework
+                  <TextLink href="https://www.djangoproject.com/">
+                    Django
+                  </TextLink>
+                  : web framework
                   <br />
-                  cheerio: webscrape real wikihow articles
+                  <TextLink href="https://cheerio.js.org/">cheerio</TextLink>:
+                  webscrape real wikihow articles
                   <br />
-                  NLTK: natural language processing library
+                  <TextLink href="https://www.nltk.org/">NLTK</TextLink>:
+                  natural language processing library
                 </p>
               </div>
             </div>
@@ -85,9 +91,12 @@ export default function Wickihow() {
                   generating the articles. However, this did not turn out as
                   well as I expected, since I did not have an efficient way to
                   search for similar words/sentences through the database.
-                  Therefore, as a proof of concept I linked some pre-generated
-                  pages from the home page of my website that attempted to
-                  create gradually more random articles.
+                  Therefore, as a proof of concept I linked some{" "}
+                  <TextLink href="http://www.wickihow.xyz/?title=How%20to%20Text%20Your%20Girlfriend">
+                    pre-generated pages
+                  </TextLink>{" "}
+                  from the home page of my website that attempted to create
+                  gradually more random articles.
                 </p>
               </div>
             </div>

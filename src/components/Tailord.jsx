@@ -9,6 +9,7 @@ import generator from "../assets/programming/tailord/tailord-generator.jpg";
 import inventory from "../assets/programming/tailord/tailord-inventory.jpg";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import TextLink from "./TextLink";
 
 export default function Tailord() {
   const classes = useStyles();
@@ -99,9 +100,11 @@ export default function Tailord() {
               <div>
                 <h3 className={classes.subtitleStyle}>Technologies used</h3>
                 <p>
-                  Ionic: Mobile framework that uses HTML, CSS, and JavaScript
+                  <TextLink href="https://ionicframework.com/">Ionic</TextLink>:
+                  Mobile framework that uses HTML, CSS, and JavaScript
                   <br />
-                  Flask: Web framework for server side
+                  <TextLink href="http://flask.pocoo.org/">Flask</TextLink>: Web
+                  framework for server side
                 </p>
               </div>
             </div>

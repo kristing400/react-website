@@ -31,6 +31,7 @@ const useStyles = makeStyles(() => ({
     color: "#000100",
     fontFamily: "Lato, sans-serif",
     fontSize: "16px",
+    transition: ".7s",
     "&:hover": {
       backgroundColor: "#EBEBEB",
     },

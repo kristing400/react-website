@@ -11,6 +11,7 @@ import masked from "../assets/programming/masked/masked.png";
 import masked1 from "../assets/programming/masked/masked1.png";
 import masked2 from "../assets/programming/masked/masked2.png";
 import masked4 from "../assets/programming/masked/masked4.png";
+import TextLink from "./TextLink";
 
 export default function Masked() {
   const classes = useStyles();
@@ -66,10 +67,16 @@ export default function Masked() {
               <div>
                 <h3 className={classes.subtitleStyle}>Tools & Sources</h3>
                 <p>
-                  Ren'py: Framework on top of Python to creates
-                  simulation/choose your own adventure based games
+                  <TextLink href="https://www.renpy.org/doc/html/index.html">
+                    Ren'py
+                  </TextLink>
+                  : Framework on top of Python to creates simulation/choose your
+                  own adventure based games
                   <br />
-                  Blind: Based off of real conversations on Blind, an anonymous
+                  <TextLink href="http://kristinyin.com/portfolio/programming/www.teamblind.com/articles/Topics">
+                    Blind
+                  </TextLink>
+                  : Based off of real conversations on Blind, an anonymous
                   public forum app exclusive to people working in tech{" "}
                 </p>
               </div>

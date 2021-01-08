@@ -89,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
       margin: 0,
       fontFamily: "Lato",
       fontWeight: 400,
-      // fontSize: "14px",
       marginTop: "8px",
     },
   },

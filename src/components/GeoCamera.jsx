@@ -17,6 +17,7 @@ import windowsAntiGhost from "../assets/programming/geoCamera/geo_camera5.2.jpg"
 import tsne from "../assets/programming/geoCamera/tsne.png";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import TextLink from "./TextLink";
 
 export default function GeoCamera() {
   const classes = useStyles();
@@ -140,12 +141,15 @@ export default function GeoCamera() {
               <div className={classes.section}>
                 <h3 className={classes.subtitleStyle}>Inspiration</h3>
                 <p>
-                  I was inspired by Philipp Schmitt’s Camera Restricta, and
-                  wanted to use a similar method of crowd sourcing data while
-                  using geolocations. Therefore, I made a machine that given a
-                  latitude longitude coordinate and a picture taken at the
-                  location, will crowd source pictures that people have posted
-                  online and fuse them to create a single picture of the
+                  I was inspired by Philipp Schmitt’s{" "}
+                  <TextLink href="http://philippschmitt.com/projects/camera-restricta">
+                    Camera Restricta
+                  </TextLink>
+                  , and wanted to use a similar method of crowd sourcing data
+                  while using geolocations. Therefore, I made a machine that
+                  given a latitude longitude coordinate and a picture taken at
+                  the location, will crowd source pictures that people have
+                  posted online and fuse them to create a single picture of the
                   location. Thus, this is a camera that takes pictures of what
                   other people has taken.
                 </p>
@@ -157,8 +161,11 @@ export default function GeoCamera() {
               <div className={classes.section}>
                 <h3 className={classes.subtitleStyle}>Collecting Data</h3>
                 <p>
-                  First, I wrote a Python script using Temboo/Flikr API to
-                  extract all the information I needed given a latitude
+                  First, I wrote a Python script using{" "}
+                  <TextLink href="https://temboo.com/library/Library/Flickr/">
+                    Temboo/Flikr API
+                  </TextLink>{" "}
+                  to extract all the information I needed given a latitude
                   longitude coordinate as input. I was able to get over
                   thousands of images with one coordinate if the location is a
                   popular spot, which was exactly what I wanted. I then wrote
@@ -180,8 +187,12 @@ export default function GeoCamera() {
                   location, because people upload such drastically different
                   photos. I had to figure out a way to "choose" the pictures
                   that looked closest to the “picture I am taking”. I used the
-                  Openframeworks add-on ofxTSNE to create a grid that sorted the
-                  top couple thousands photos by similarities.
+                  Openframeworks add-on{" "}
+                  <TextLink href="https://github.com/genekogan/ofxTSNE">
+                    ofxTSNE
+                  </TextLink>{" "}
+                  to create a grid that sorted the top couple thousands photos
+                  by similarities.
                 </p>
                 <br />
                 <br />
@@ -191,11 +202,15 @@ export default function GeoCamera() {
                 <p>
                   Finally I used a 7×7 grid to find the closest 49 pictures in
                   the TSNE grid from a given image (the initial image that I
-                  took), and put these batch of pictures into Autopano, an image
-                  stitching software. The results turned out better than I
-                  thought. Some were fairly normal, and just looked like a
-                  shitty panorama job, and others turned out super interesting.
-                  Above are some results with normal and anti-ghost settings.
+                  took), and put these batch of pictures into{" "}
+                  <TextLink href="http://kristinyin.com/portfolio/programming/www.kolor.com/autopano/">
+                    Autopano
+                  </TextLink>
+                  , an image stitching software. The results turned out better
+                  than I thought. Some were fairly normal, and just looked like
+                  a shitty panorama job, and others turned out super
+                  interesting. Above are some results with normal and anti-ghost
+                  settings.
                 </p>
               </div>
             </div>

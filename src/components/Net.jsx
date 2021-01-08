@@ -12,6 +12,7 @@ import results from "../assets/programming/net/results.png";
 import profiles from "../assets/programming/net/profiles.png";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import TextLink from "./TextLink";
 
 export default function Net() {
   const classes = useStyles();
@@ -118,13 +119,23 @@ export default function Net() {
               <div className={classes.section}>
                 <h3 className={classes.subtitleStyle}>Technologies used</h3>
                 <p>
-                  p5.js: Capturing audio & data visualization
+                  <TextLink href="https://p5js.org/">p5.js</TextLink>: Capturing
+                  audio & data visualization
                   <br />
-                  Django: Web Framework
+                  <TextLink href="https://www.djangoproject.com/">
+                    Django
+                  </TextLink>
+                  : Web Framework
                   <br />
-                  Google Speech: Performing speech to text
+                  <TextLink href="https://cloud.google.com/speech-to-text/">
+                    Google Speech
+                  </TextLink>
+                  : Performing speech to text
                   <br />
-                  Google Language: Detect word association
+                  <TextLink href="https://cloud.google.com/natural-language">
+                    Google Natural Language
+                  </TextLink>
+                  : Detect word association
                 </p>
               </div>
               <div className={classes.section}>
