@@ -25,6 +25,8 @@ import {
   PRESSURE_CLASSIFIER_PATH,
   MASKED_PATH,
   WICKIHOW_PATH,
+  AERO_PATH,
+  ESCAPE_PATH,
 } from "..";
 
 function Programming({ history }) {
@@ -97,7 +99,7 @@ function Programming({ history }) {
       title: "aero 01",
       subtitle: "Art & Arduino",
       description: "Spring 2018",
-      href: EQUERRY_PATH,
+      href: AERO_PATH,
     },
     {
       src: wickihow,
@@ -123,11 +125,11 @@ function Programming({ history }) {
       src: escapeRoom,
       width: 16,
       height: 10,
-      alt: "escape the room: parallel universes",
-      title: "escape the room: parallel universes",
+      alt: "parallel worlds escape game",
+      title: "Parallel Worlds Escape Game",
       subtitle: "Experimental Game Design",
       description: "Fall 2016",
-      href: EQUERRY_PATH,
+      href: ESCAPE_PATH,
     },
 
     {
