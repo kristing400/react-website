@@ -4,8 +4,6 @@ import { PROGRAMMING } from "./Header";
 import ProjectTitle from "./ProjectTitle";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "./Button";
-import comeCloser from "../assets/programming/escapeRoom/comecloser.gif";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 
@@ -32,8 +30,6 @@ export default function Rubegoldberg() {
           <Grid item md={8} xs={12}>
             <div>
               <iframe
-                width="750"
-                height="432"
                 src="https://www.youtube.com/embed/HgP1zZFpg8U"
                 frameborder="0"
                 allowfullscreen
