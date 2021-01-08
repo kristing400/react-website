@@ -27,6 +27,7 @@ import {
   WICKIHOW_PATH,
   AERO_PATH,
   ESCAPE_PATH,
+  RUBEGOLDBERG_PATH,
 } from "..";
 
 function Programming({ history }) {
@@ -119,7 +120,7 @@ function Programming({ history }) {
       title: "Virtual rube-goldberg machine",
       subtitle: "Experimental Game Design",
       description: "Fall 2016",
-      href: EQUERRY_PATH,
+      href: RUBEGOLDBERG_PATH,
     },
     {
       src: escapeRoom,

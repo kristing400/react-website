@@ -18,6 +18,7 @@ import Masked from "./components/Masked";
 import Wickihow from "./components/Wickihow";
 import Aero from "./components/aero";
 import Escape from "./components/Escape";
+import Rubegoldberg from "./components/Rubegoldberg";
 
 export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
@@ -33,6 +34,7 @@ export const MASKED_PATH = "/programming/masked";
 export const WICKIHOW_PATH = "/programming/wickihow";
 export const AERO_PATH = "/programming/aero";
 export const ESCAPE_PATH = "/programming/escape";
+export const RUBEGOLDBERG_PATH = "/programming/rubegoldberg";
 export const HOME_PATH = "/";
 
 export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
@@ -80,6 +82,9 @@ ReactDOM.render(
           </Route>
           <Route exact path={ESCAPE_PATH}>
             <Escape />
+          </Route>
+          <Route exact path={RUBEGOLDBERG_PATH}>
+            <Rubegoldberg />
           </Route>
           <Route exact path={HOME_PATH}>
             <Home />
