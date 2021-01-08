@@ -46,7 +46,7 @@ export default function Wickihow() {
                 </p>
               </div>
               <div className={classes.buttonContainer}>
-                <Button href="http://www.wickihow.xyz/">Live demo</Button>
+                <Button href="http://www.wickihow.xyz/">live demo</Button>
               </div>
               <div className={classes.buttonContainer}>
                 <Button href="https://github.com/kristing400/wickiHow">

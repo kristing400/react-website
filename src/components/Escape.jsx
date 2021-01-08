@@ -60,7 +60,7 @@ export default function Escape() {
               </div>
               <div className={classes.buttonContainer}>
                 <Button href="https://drive.google.com/drive/folders/0B-weBJf14mHxUkhIR1NRRVZSUk0?usp=sharing">
-                  Download
+                  download
                 </Button>
               </div>
             </div>

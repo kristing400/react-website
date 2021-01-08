@@ -48,7 +48,7 @@ export default function Masked() {
               </div>
               <div className={classes.buttonContainer}>
                 <Button href="https://kristinyin.itch.io/masked">
-                  Download from itch.io
+                  download from itch.io
                 </Button>
               </div>
               <div className={classes.buttonContainer}>
