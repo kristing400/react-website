@@ -24,6 +24,7 @@ import {
   GEOCAMERA_PATH,
   PRESSURE_CLASSIFIER_PATH,
   MASKED_PATH,
+  WICKIHOW_PATH,
 } from "..";
 
 function Programming({ history }) {
@@ -106,7 +107,7 @@ function Programming({ history }) {
       title: "wickihow",
       subtitle: "Modding & Remixing",
       description: "Fall 2017",
-      href: EQUERRY_PATH,
+      href: WICKIHOW_PATH,
     },
     {
       src: rubeGoldberg,

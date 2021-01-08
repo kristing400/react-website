@@ -15,6 +15,7 @@ import Cozmo from "./components/Cozmo";
 import GeoCamera from "./components/GeoCamera";
 import PressureClassifier from "./components/PressureClassifier";
 import Masked from "./components/Masked";
+import Wickihow from "./components/Wickihow";
 
 export const PROGRAMMING_PATH = "/programming";
 export const CODE_ART_PATH = "/code-art";
@@ -27,6 +28,7 @@ export const COZMO_PATH = "/programming/cozmo";
 export const GEOCAMERA_PATH = "/programming/geo-camera";
 export const PRESSURE_CLASSIFIER_PATH = "/programming/pressure-classifier";
 export const MASKED_PATH = "/programming/masked";
+export const WICKIHOW_PATH = "/programming/wickihow";
 export const HOME_PATH = "/";
 
 export const projectPaths = [EQUERRY_PATH, NET_PATH, HOME_PATH];
@@ -65,6 +67,9 @@ ReactDOM.render(
           </Route>
           <Route exact path={MASKED_PATH}>
             <Masked />
+          </Route>
+          <Route exact path={WICKIHOW_PATH}>
+            <Wickihow />
           </Route>
           <Route exact path={HOME_PATH}>
             <Home />
