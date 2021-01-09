@@ -1,6 +1,4 @@
 import React from "react";
-import Gallery from "react-photo-gallery";
-import { makeStyles } from "@material-ui/core/styles";
 import riceballUrl from "../assets/watercolors/riceball.JPG";
 import sashimiUrl from "../assets/watercolors/sashimi.JPG";
 import hiddenStairwaysUrl from "../assets/watercolors/hiddenStairways.JPG";
@@ -9,53 +7,46 @@ import palaceOfFineArtsUrl from "../assets/watercolors/palaceOfFineArts.JPG";
 import Navigation from "./Navigation";
 import { WATERCOLORS } from "./Header";
 
-export default function Watercolors() {
-  const classes = useStyles();
+import ImgGallery from "./ImgGallery";
 
+export default function Watercolors() {
   const photos = [
     {
       src: hiddenStairwaysUrl,
       width: 9,
       height: 12,
+      id: 0,
     },
     {
       src: riceballUrl,
       width: 6,
       height: 4,
+      id: 1,
     },
     {
       src: sashimiUrl,
       width: 6,
       height: 4,
+      id: 2,
     },
     {
       src: seoulUrl,
       width: 8,
       height: 9,
+      id: 3,
     },
     {
       src: palaceOfFineArtsUrl,
       width: 6,
       height: 4,
+      id: 4,
     },
   ];
+
   return (
     <>
       <Navigation currentTab={WATERCOLORS} />
-      <div className={classes.container}>
-        <Gallery margin={8} direction="column" photos={photos} />
-      </div>
+      <ImgGallery photos={photos} direction="column" />
     </>
   );
 }
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    paddingBottom: "32px",
-
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: "16px",
-      paddingBottom: "16px",
-    },
-  },
-}));

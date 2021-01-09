@@ -13,11 +13,8 @@ function ProjectTitle({ title, subtitle, history }) {
   const smallBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const content = (
     <>
-      <div className={classes.icon}>
-        <Icon
-          icon={roundArrowBackIos}
-          style={{ fontSize: "24px", color: "#000100" }}
-        />
+      <div className={classes.iconContainer}>
+        <Icon icon={roundArrowBackIos} className={classes.icon} />
       </div>
       <div className={classes.titleContainer}>
         <h3 className={classes.titleStyle}>{title}</h3>
@@ -45,6 +42,9 @@ export default withRouter(ProjectTitle);
 
 const useStyles = makeStyles((theme) => ({
   icon: {
+    fontSize: "24px",
+  },
+  iconContainer: {
     marginRight: "16px",
     [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
@@ -59,10 +59,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flexStart",
     padding: 0,
+    "&:hover": {
+      color: "#94c5cc",
+    },
   },
   titleContainer: {
     paddingBottom: "24px",
     textAlign: "left",
+    color: "#000100",
     [theme.breakpoints.down("sm")]: {
       paddingTop: "24px",
       paddingBottom: "24px",

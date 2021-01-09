@@ -1,5 +1,4 @@
 import React from "react";
-import Gallery from "react-photo-gallery";
 import { makeStyles } from "@material-ui/core/styles";
 import Navigation from "./Navigation";
 import { SHANGHAI_SUBWAY } from "./Header";
@@ -14,6 +13,7 @@ import subway8 from "../assets/mixedMedia/subway_8.jpg";
 import subway9 from "../assets/mixedMedia/subway_9.jpg";
 import subway10 from "../assets/mixedMedia/subway_10.jpg";
 import subway11 from "../assets/mixedMedia/subway_11.jpg";
+import ImgGallery from "./ImgGallery";
 
 export default function ShanghaiSubway() {
   const classes = useStyles();
@@ -22,66 +22,77 @@ export default function ShanghaiSubway() {
       src: subway1,
       width: 11,
       height: 16,
+      id: 0,
     },
 
     {
       src: subway8,
       width: 16,
       height: 11,
+      id: 1,
     },
     {
       src: subway3,
       width: 8,
       height: 4,
+      id: 2,
     },
     {
       src: subway4,
       width: 4,
       height: 8,
+      id: 3,
     },
     {
       src: subway5,
       width: 16,
       height: 11,
+      id: 4,
     },
     {
       src: subway6,
       width: 16,
       height: 11,
+      id: 5,
     },
 
     {
       src: subway2,
       width: 5,
       height: 16,
+      id: 6,
     },
     {
       src: subway9,
       width: 8,
       height: 6,
+      id: 7,
     },
     {
       src: subway11,
       width: 16,
       height: 11,
+      id: 8,
     },
 
     {
       src: subway7,
       width: 8,
       height: 3,
+      id: 9,
     },
 
     {
       src: subway10,
       width: 16,
       height: 11,
+      id: 10,
     },
   ];
   return (
     <>
       <Navigation currentTab={SHANGHAI_SUBWAY} />
-      <div className={classes.container}>
+      <ImgGallery photos={photos} direction="row">
         <div className={classes.subtitleStyle}>
           <p style={{ width: "800px" }}>
             A concentration on the Shanghai Subway system. Nostalgic, complex,
@@ -92,21 +103,12 @@ export default function ShanghaiSubway() {
             remain here.
           </p>
         </div>
-        <Gallery margin={8} direction="row" photos={photos} />
-      </div>
+      </ImgGallery>
     </>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    paddingBottom: "32px",
-
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: "32px",
-      paddingBottom: "32px",
-    },
-  },
   subtitleStyle: {
     textAlign: "center",
     display: "flex",

@@ -12,7 +12,7 @@ export default function LinkImg({
   title,
   description,
   subtitle,
-  onLoad,
+  hideInfo,
 }) {
   const classes = useStyles();
 
@@ -30,8 +30,24 @@ export default function LinkImg({
 
   const [loaded, setLoaded] = useState(false);
 
+  if (hideInfo)
+    return (
+      <Fade in={loaded} timeout={1500}>
+        <div
+          style={{ margin, height: photo.height, width: photo.width, ...cont }}
+        >
+          <img
+            {...photo}
+            alt={photo.alt}
+            onClick={onClick}
+            onLoad={() => setLoaded(true)}
+          />
+        </div>
+      </Fade>
+    );
+
   return (
-    <Fade in={loaded} timeout={2000}>
+    <Fade in={loaded} timeout={1500}>
       <div
         className={classes.container}
         style={{ margin, height: photo.height, width: photo.width, ...cont }}
