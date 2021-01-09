@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Fade } from "@material-ui/core";
 
 export default function LinkImg({
   photo,
@@ -11,6 +12,7 @@ export default function LinkImg({
   title,
   description,
   subtitle,
+  onLoad,
 }) {
   const classes = useStyles();
 
@@ -26,20 +28,29 @@ export default function LinkImg({
     cont.top = top;
   }
 
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div
-      className={classes.container}
-      style={{ margin, height: photo.height, width: photo.width, ...cont }}
-    >
-      <div className="overlay">
-        <div className={classes.overlayText}>
-          <h4 className={classes.titleStyle}>{title}</h4>
-          <h5 className={classes.subtitle}>{subtitle}</h5>
-          <p className={classes.descriptionStyle}>{description}</p>
+    <Fade in={loaded} timeout={2000}>
+      <div
+        className={classes.container}
+        style={{ margin, height: photo.height, width: photo.width, ...cont }}
+      >
+        <div className="overlay">
+          <div className={classes.overlayText}>
+            <h4 className={classes.titleStyle}>{title}</h4>
+            <h5 className={classes.subtitle}>{subtitle}</h5>
+            <p className={classes.descriptionStyle}>{description}</p>
+          </div>
+          <img
+            {...photo}
+            alt={photo.alt}
+            onClick={onClick}
+            onLoad={() => setLoaded(true)}
+          />
         </div>
-        <img {...photo} alt={photo.alt} onClick={onClick} />
       </div>
-    </div>
+    </Fade>
   );
 }
 
