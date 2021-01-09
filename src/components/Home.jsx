@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./Navigation";
 import profile from "../assets/me.jpg";
-import { Grid } from "@material-ui/core";
+import { Fade, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default function Home() {
@@ -11,40 +11,42 @@ export default function Home() {
     <>
       <Navigation />
       <div className={classes.container}>
-        <Grid
-          direction="row"
-          container
-          justify="center"
-          alignItems="center"
-          spacing={4}
-        >
-          <Grid item>
-            <div className={classes.imgContainerStyle}>
-              <img
-                src={profile}
-                alt="profile_img"
-                width="100%"
-                className={classes.imgStyle}
-              />
-            </div>
+        <Fade in timeout={1500}>
+          <Grid
+            direction="row"
+            container
+            justify="center"
+            alignItems="center"
+            spacing={4}
+          >
+            <Grid item>
+              <div className={classes.imgContainerStyle}>
+                <img
+                  src={profile}
+                  alt="profile_img"
+                  width="100%"
+                  className={classes.imgStyle}
+                />
+              </div>
+            </Grid>
+            <Grid item>
+              <div className={classes.textContainerStyle}>
+                <h3 className={classes.subtitleStyle}>
+                  Software Engineer @ Airbnb
+                </h3>
+                <br />
+                <p>Carngie Mellon University 2018</p>
+                <p>Bachelors of Computer Science and Arts</p>
+                <br />
+                <p>
+                  Ask me about: Airbnb, anime, watercolors, drawing, CMU, BCSA,
+                  League of Legends, traveling, Shanghai, working in tech,
+                  badminton, interactive art, generative art, video games, piano
+                </p>
+              </div>
+            </Grid>
           </Grid>
-          <Grid item>
-            <div className={classes.textContainerStyle}>
-              <h3 className={classes.subtitleStyle}>
-                Software Engineer @ Airbnb
-              </h3>
-              <br />
-              <p>Carngie Mellon University 2018</p>
-              <p>Bachelors of Computer Science and Arts</p>
-              <br />
-              <p>
-                Ask me about: Airbnb, anime, watercolors, drawing, CMU, BCSA,
-                League of Legends, traveling, Shanghai, working in tech,
-                badminton, interactive art, generative art, video games, piano
-              </p>
-            </div>
-          </Grid>
-        </Grid>
+        </Fade>
       </div>
     </>
   );
