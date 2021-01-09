@@ -80,8 +80,9 @@ export default function ImgModal({
 
 const useStyles = makeStyles((theme) => ({
   close: {
-    position: "fixed",
+    position: "absolute",
     top: 0,
+    left: 0,
     padding: "16px",
   },
   img: {
@@ -89,7 +90,9 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
     maxHeight: "800px",
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      width: "auto",
+      maxHeight: "680px",
+      maxWidth: "100%",
     },
   },
   modal: {
@@ -114,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 0,
       borderRadius: 0,
       height: "100%",
+      justifyContent: "center",
     },
   },
   buttonLeft: {
