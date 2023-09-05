@@ -5,7 +5,7 @@ import ProjectTitle from "./ProjectTitle";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "./Button";
-import home from "../assets/programming/net/home.png";
+import home from "../assets/programming/net/Home.png";
 import eventInfo from "../assets/programming/net/eventInfo.png";
 import inProgress from "../assets/programming/net/inProgress.png";
 import results from "../assets/programming/net/results.png";

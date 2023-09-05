@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import menuLine from "@iconify/icons-clarity/menu-line";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
-import Pdf from "../assets/resume.pdf";
+import Pdf from "../assets/resume0923.pdf";
 import { withRouter } from "react-router";
 import { useTheme } from "@material-ui/core/styles";
 import roundArrowBackIos from "@iconify/icons-ic/round-arrow-back-ios";
